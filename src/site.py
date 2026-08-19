@@ -283,24 +283,21 @@ def conditional_table(ev: pd.DataFrame, earn: pd.DataFrame, bench_label: str) ->
 
 
 def takeaways(t: str, h: dict, ps, stats: dict, bench_label: str, ev: pd.DataFrame) -> list[str]:
+    """Short, trading-oriented bullets generated from the numbers (overridable via config/takeaways.json)."""
     n = h["n_prints"]; op = h["outperform"] / max(n, 1); beat_rate = h["beats"] / max(h["n_eps"], 1)
+    b, m, r = stats.get("Beat consensus"), stats.get("Missed consensus"), stats.get("Rallied >100 bps into the print")
     out = []
-    gap = "but" if (beat_rate >= 0.6 and op < 0.5) else ("and" if (beat_rate >= 0.6 and op >= 0.5) else "while")
-    out.append(f"{t} beat EPS consensus in {beat_rate:.0%} of {h['n_eps']} prints, {gap} it beat {bench_label} on the print day in only {op:.0%} of them"
-               if op < 0.5 else f"{t} beat EPS consensus in {beat_rate:.0%} of {h['n_eps']} prints, {gap} it beat {bench_label} on the print day in {op:.0%} of them"
-               )
-    out[-1] += f" (90% band {h['outperform_ci'][0]:.0%}–{h['outperform_ci'][1]:.0%})."
-    b, m = stats.get("Beat consensus"), stats.get("Missed consensus")
+    line = f"Beats consensus {beat_rate:.0%} of the time; up vs {bench_label} on {op:.0%} of print days (band {h['outperform_ci'][0]:.0%}–{h['outperform_ci'][1]:.0%})."
     if b and m and m["n"] >= 3:
-        out.append(f"Beats moved it {_fmt_n(b['mean'])} bps vs {bench_label} on average (up {b['up']:.0%} of {b['n']}); misses {_fmt_n(m['mean'])} bps (up {m['up']:.0%} of {m['n']}) — "
-                   + ("the number matters." if (b["mean"] - m["mean"]) > 150 else "the number explains little of the print-day move."))
-    elif b:
-        out.append(f"Beats moved it {_fmt_n(b['mean'])} bps vs {bench_label} on average (up {b['up']:.0%} of {b['n']}); too few misses ({m['n'] if m else 0}) to compare.")
-    r = stats.get("Rallied >100 bps into the print")
+        verdict = "trades on the number" if (b["mean"] - m["mean"]) > 150 else "the number explains little"
+        line += f" Beat days {_fmt_n(b['mean'])} bps ({b['up']:.0%} up, n={b['n']}), misses {_fmt_n(m['mean'])} ({m['up']:.0%} up, n={m['n']}) — {verdict}."
+    out.append(line)
     if r and r["n"] >= 3:
-        out.append(f"After rallying >100 bps vs {bench_label} into the print it was up on the print day {r['up']:.0%} of {r['n']} times (avg {_fmt_n(r['mean'])} bps).")
-    out.append(f"Typical print-day move: {h['avg_abs_t0_rel']:,.0f} bps vs {bench_label} / {h['avg_abs_t0_abs']:,.0f} bps outright; the day-after move averages "
-               f"{_fmt_n(ev.tp1_rel.mean())} bps vs {bench_label}.")
+        out.append(f"Run-up into the print: after a >100 bps rally it was up {r['up']:.0%} of {r['n']} times on the day (avg {_fmt_n(r['mean'])} bps).")
+    big = ev.loc[ev.t0_rel.abs().idxmax()] if ev.t0_rel.notna().any() else None
+    share300 = float((ev.t0_rel.abs() > 300).mean())
+    out.append(f"Size for ~{h['avg_abs_t0_rel']:,.0f} bps vs {bench_label} ({h['avg_abs_t0_abs']:,.0f} bps outright); {share300:.0%} of prints move >300 bps"
+               + (f", biggest {_fmt_n(big.t0_rel)} ({big.fq_label})" if big is not None else "") + f". Day-after drift {_fmt_n(ev.tp1_rel.mean())} bps.")
     return out
 
 
@@ -383,19 +380,19 @@ def build_site(out: Path = DOCS):
 {H("Beat EPS consensus", "Share of prints where reported EPS exceeded the consensus that stood the day before")}
 {H("Rallied in → up on print", "Of the prints where the stock beat peers by more than 100 bps the day before, the share where it also beat peers on the print day (n = how many such prints)")}
 </tr></thead><tbody>{''.join(rows)}</tbody></table></div>
-<p class="sub" style="font-size:12.5px;margin-top:6px"><b>How to read:</b> "vs peers" = the stock's close-to-close move minus the equal-weight average of its peer group that day (OFS: HAL/SLB/BKR · Producers: XOM/CVX/COP/EOG/OXY/FANG), in basis points (100 bps = 1%). "Print day" = the first full session after the release. Hover a column header for its definition; click to sort. Confidence bands are Wilson 90%.</p>"""
+<p class="sub" style="font-size:12.5px;margin-top:6px">bps vs equal-weight peer basket; hover a header for its definition, click to sort. Full definitions under <a href="#method">Method &amp; data</a>.</p>"""
     obs = "<ul>" + "".join(f"<li>{html.escape(b)}</li>" for b in bullets) + "</ul>"
     body = f"""
 <h1>How liquid US energy names trade around earnings</h1>
-<p class="sub">Every quarterly print since 1Q16 for nine large, liquid energy names: how the stock moved versus its peers the day before the print, on the print day and the day after — and how reported EPS compared with the consensus that stood the day before. All moves are in basis points (100 bps = 1%).</p>
-<div class="method"><b>Method.</b> Relative = stock minus equal-weight peer basket ex-self (OFS: HAL/SLB/BKR · Producers: XOM/CVX/COP/EOG/OXY/FANG), close-to-close, in basis points. t0 = first full session reflecting the release (BMO → announce day; AMC → next session). Consensus = mean EPS estimate the day before the print. Source: S&amp;P Capital IQ.</div>
-{fresh}
-<div class="tiles">{tiles}</div>
+<p class="sub">Nine large-cap energy names, every quarterly print since 1Q16 ({n_tot} prints): how the stock moved vs its peers on the print day and the days either side, and whether beating the number mattered. Moves in basis points vs peers (100 bps = 1%).</p>
 <h2>What the numbers say</h2><div class="obs">{obs}</div>
+<h2>Summary by name</h2>{table}
 <h2>Across the group</h2>
 <div class="grid2"><div class="card">{chart_cross_section(summary)}</div><div class="card">{chart_outperform(summary)}</div></div>
-<h2>Summary by name</h2>{table}
-<p class="sub" style="margin-top:16px">Per-name pages: {" · ".join(f"<a href='{t}.html'>{t}</a>" for t in tickers)}. Data: <a href="summary.csv">summary.csv</a></p>
+<h2 id="method">Method &amp; data</h2>
+<div class="method"><b>Method.</b> "vs peers" = stock minus equal-weight peer basket ex-self (OFS: HAL/SLB/BKR · Producers: XOM/CVX/COP/EOG/OXY/FANG), close-to-close, in basis points. Print day = first full session reflecting the release (before-open → same day; after-close → next session). Consensus = mean EPS estimate the day before the print. Confidence bands are Wilson 90%. Source: S&amp;P Capital IQ (prices, dates, estimates); release timing from company timestamps.</div>
+{fresh}
+<p class="sub" style="margin-top:10px">Per-name pages: {" · ".join(f"<a href='{t}.html'>{t}</a>" for t in tickers)} · Data: <a href="summary.csv">summary.csv</a></p>
 """
     (out / "index.html").write_text(page("Earnings print reactions — energy", body, nav, asof), encoding="utf-8")
 

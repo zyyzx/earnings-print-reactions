@@ -84,30 +84,23 @@ def summarise(results: dict) -> pd.DataFrame:
 
 
 def observations(summary: pd.DataFrame, results: dict, uni: pd.DataFrame) -> list[str]:
-    """Factual bullets generated from the numbers (every figure traceable to summary.csv / *_events.csv)."""
+    """Short, trading-oriented bullets generated from the numbers (every figure traceable to summary.csv)."""
     s = summary.set_index("ticker")
     b = []
-    n_tot = int(s.n_events.sum())
     mean_t0, mean_tm1, mean_tp1 = s.avg_abs_rel_t0.mean(), s.avg_abs_rel_tm1.mean(), s.avg_abs_rel_tp1.mean()
-    b.append(f"Sample: {len(s)} liquid energy names, {n_tot} prints since {results[list(results)[0]][0].fq_label.iloc[0]}. "
-             f"Average |move| vs peers is {mean_tm1:,.0f} bps the day before, {mean_t0:,.0f} bps on the print, {mean_tp1:,.0f} bps the day after — "
-             f"the print day carries ~{mean_t0 / max(mean_tm1, 1):.1f}x the day-before dispersion.")
+    b.append(f"The print day carries the move: {mean_t0:,.0f} bps avg vs peers on the day, vs {mean_tm1:,.0f} the day before and {mean_tp1:,.0f} the day after. "
+             f"Day-after drift nets to {s.avg_rel_tp1.mean():+.0f} bps — the reaction is done by the close.")
     worst = s.outperform_pct.idxmin(); best = s.outperform_pct.idxmax()
-    b.append(f"Most consistent underperformer on the print: {worst} — outperformed peers on t0 in {s.loc[worst, 'outperform_pct']:.0%} of "
-             f"{int(s.loc[worst, 'n_events'])} prints (90% band {s.loc[worst, 'ci_lo']:.0%}-{s.loc[worst, 'ci_hi']:.0%}) despite beating "
-             f"pre-print consensus {s.loc[worst, 'beat_rate']:.0%} of the time. Most consistent outperformer: {best} ({s.loc[best, 'outperform_pct']:.0%}).")
-    big = s.avg_abs_rel_t0.idxmax(); small = s.avg_abs_rel_t0.idxmin()
-    b.append(f"Largest print-day dispersion vs peers: {big} (avg |t0 rel| {s.loc[big, 'avg_abs_rel_t0']:,.0f} bps); smallest: {small} "
-             f"({s.loc[small, 'avg_abs_rel_t0']:,.0f} bps). Absolute print-day moves average {s.avg_abs_t0_abs.mean():,.0f} bps across the group.")
+    b.append(f"Beating the number is not beating peers: {worst} beat consensus {s.loc[worst, 'beat_rate']:.0%} of the time but was up vs peers on only "
+             f"{s.loc[worst, 'outperform_pct']:.0%} of print days; {best} is the only name above 60% ({s.loc[best, 'outperform_pct']:.0%}).")
+    top = s.avg_abs_rel_t0.sort_values(ascending=False)
+    b.append(f"Where the juice is: {top.index[0]} {top.iloc[0]:,.0f} bps avg print-day move vs peers, {top.index[1]} {top.iloc[1]:,.0f}, {top.index[2]} {top.iloc[2]:,.0f}; "
+             f"{top.index[-1]} the quietest at {top.iloc[-1]:,.0f}.")
     ft = s[s.follow_through_n >= 3]
     if len(ft):
         lo = ft.follow_through_hit.idxmin(); hi = ft.follow_through_hit.idxmax()
-        b.append(f"Follow-through after a >100 bps relative rally into the print (t-1): {hi} kept going on t0 in {ft.loc[hi, 'follow_through_hit']:.0%} "
-                 f"of {int(ft.loc[hi, 'follow_through_n'])} cases; {lo} in only {ft.loc[lo, 'follow_through_hit']:.0%} of {int(ft.loc[lo, 'follow_through_n'])} — "
-                 f"pre-print strength is not a reliable signal across the group (n is small everywhere).")
-    drift = s.avg_rel_tp1
-    b.append(f"Day-after drift vs peers is small on average ({drift.mean():+.0f} bps; range {drift.min():+.0f} to {drift.max():+.0f}); "
-             f"the reaction is largely done by the close of t0.")
+        b.append(f"A rally into the print is not a signal: follow-through on the day ranges from {ft.loc[lo, 'follow_through_hit']:.0%} ({lo}, n={int(ft.loc[lo, 'follow_through_n'])}) "
+                 f"to {ft.loc[hi, 'follow_through_hit']:.0%} ({hi}, n={int(ft.loc[hi, 'follow_through_n'])}).")
     return b
 
 
