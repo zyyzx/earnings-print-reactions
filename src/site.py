@@ -21,7 +21,9 @@ import plotly.io as pio
 
 from . import compute, db
 from .build import BENCH_FALLBACKS, observations, summarise
-from .paths import DB_PATH, ROOT, TIMING_OVERRIDES_CSV, UNIVERSE_CSV
+from .paths import CONFIG, DB_PATH, ROOT, TIMING_OVERRIDES_CSV, UNIVERSE_CSV
+
+TAKEAWAYS_JSON = CONFIG / "takeaways.json"   # optional hand-written overrides {ticker: [bullets]}
 
 DOCS = ROOT / "docs"
 
@@ -417,6 +419,8 @@ def build_site(out: Path = DOCS):
         peers_block, st_peers = charts_for(ev, P["bench_label"], "peers")
         etf_block, st_etf = charts_for(P["ev_etf"], P["bench"], "etf")
         tk = takeaways(t, h, ps, st_peers, P["bench_label"], ev)
+        if TAKEAWAYS_JSON.exists():
+            tk = json.loads(TAKEAWAYS_JSON.read_text(encoding="utf8")).get(t, tk)
         big = ev.loc[ev.t0_rel.abs().idxmax()] if ev.t0_rel.notna().any() else None
         tiles = "".join([
             tile("Prints", f"{h['n_prints']}", f"{h['first_label']} → {ev.fq_label.iloc[-1]}"),

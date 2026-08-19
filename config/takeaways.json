@@ -1,0 +1,14 @@
+{
+ "HAL": [
+  "The number is managed: HAL has beaten consensus in 36 of 42 prints since 1Q16. The six misses were the only prints where the stock really broke (−355 bps vs SLB/BKR on average; down vs peers on 5 of 6).",
+  "A beat buys almost nothing: on beat days HAL averaged +20 bps vs peers and finished ahead of them less than half the time (47% of 36). Across all 42 prints it lagged peers on 57% of print days (43% up, 90% band 31–55%).",
+  "Positioning shows up the day before, not the day of: HAL drifts up into the print (+30 bps vs peers on average), but a >100 bps rally into the print has been a coin flip on the day (6 of 12 up, avg −41 bps).",
+  "Size: 266 bps average print-day move vs peers (318 bps outright); a third of prints move more than 300 bps vs peers, from −861 bps (2Q18) to +1,094 bps (3Q25). Day-after drift is small (+20 bps)."
+ ],
+ "BKR": [
+  "BKR trades on the number: beats averaged +170 bps vs HAL/SLB on the print day (up 73% of 22); misses −71 bps (up 47% of 15). Overall it has beaten peers on 62% of print days (90% band 49–74%), the best hit rate in the group.",
+  "It is the biggest mover in the group: 343 bps average print-day move vs peers, and nearly half of prints (47%) move more than 300 bps vs peers — +914 bps in 2Q25, −813 bps in 4Q23.",
+  "Pre-print positioning cuts against the grain: after a >100 bps rally into the print it was up only 42% of 12 times (avg −80 bps), while prints it sold off into averaged +241 bps on the day (up 5 of 8).",
+  "Calendar notes: BKR has reported after the close since 3Q23, so the print-day reaction is the next session; the sample starts 3Q17 (37 prints). Six of the last eight prints were up vs peers, most by more than 300 bps."
+ ]
+}
