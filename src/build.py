@@ -89,7 +89,7 @@ def observations(summary: pd.DataFrame, results: dict, uni: pd.DataFrame) -> lis
     b = []
     mean_t0, mean_tm1, mean_tp1 = s.avg_abs_rel_t0.mean(), s.avg_abs_rel_tm1.mean(), s.avg_abs_rel_tp1.mean()
     b.append(f"The print day carries the move: {mean_t0:,.0f} bps avg vs peers on the day, vs {mean_tm1:,.0f} the day before and {mean_tp1:,.0f} the day after. "
-             f"Day-after drift nets to {s.avg_rel_tp1.mean():+.0f} bps — the reaction is done by the close.")
+             f"Day-after drift nets to {s.avg_rel_tp1.mean():+.0f} bps; the reaction is done by the close.")
     worst = s.outperform_pct.idxmin(); best = s.outperform_pct.idxmax()
     b.append(f"Beating the number is not beating peers: {worst} beat consensus {s.loc[worst, 'beat_rate']:.0%} of the time but was up vs peers on only "
              f"{s.loc[worst, 'outperform_pct']:.0%} of print days; {best} is the only name above 60% ({s.loc[best, 'outperform_pct']:.0%}).")
@@ -176,14 +176,14 @@ def main():
             bullets = observations(summary, results, uni)
             first = results[list(results)[0]][0].fq_label.iloc[0]
             render.render_cover(summary, bullets, out_dir / "cover.png",
-                                title="How liquid energy names trade around earnings — historical print reactions",
+                                title="How liquid energy names trade around earnings: historical print reactions",
                                 subtitle=(f"{len(summary)} names, {first} to latest print. Relative = stock minus equal-weight peer basket (ex-self), "
                                           "close-to-close, in bps. t0 = first full session reflecting the print. Source: S&P Capital IQ prices & estimates."),
                                 pdf=None)
             # assemble PDF: cover first, then each dashboard (re-render figures into the pdf)
             with PdfPages(out_dir / "earnings_reaction_draft.pdf") as pdf:
                 render.render_cover(summary, bullets, out_dir / "cover.png",
-                                    title="How liquid energy names trade around earnings — historical print reactions",
+                                    title="How liquid energy names trade around earnings: historical print reactions",
                                     subtitle=(f"{len(summary)} names, {first} to latest print. Relative = stock minus equal-weight peer basket (ex-self), "
                                               "close-to-close, in bps. t0 = first full session reflecting the print. Source: S&P Capital IQ prices & estimates."),
                                     pdf=pdf)

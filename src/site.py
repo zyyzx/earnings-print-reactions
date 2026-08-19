@@ -238,7 +238,7 @@ def page(title: str, body: str, nav_links: list[tuple[str, str]], asof: str) -> 
 <style>{CSS}</style>{PLOTLY_TAG}</head><body>
 <header class="top"><div class="wrap"><span class="brand"><a href="index.html" style="color:inherit">Earnings print reactions</a> <span class="pill">energy · 1Q16 → latest</span></span><nav>{nav}</nav></div></header>
 <main class="wrap">{body}</main>
-<footer class="wrap">Data: S&amp;P Capital IQ (daily closes, announce dates, EPS actual &amp; pre-print consensus); release timing (BMO/AMC) from company timestamps. Built {asof}. Historical description only — not a recommendation.</footer>
+<footer class="wrap">Data: S&amp;P Capital IQ (daily closes, announce dates, EPS actual &amp; pre-print consensus); release timing (BMO/AMC) from company timestamps. Built {asof}. Historical description only, not a recommendation.</footer>
 <script>{SORT_JS}</script></body></html>"""
 
 
@@ -247,7 +247,7 @@ def tile(k, v, s=""):
 
 
 def _fmt_n(v):
-    return "" if v is None or (isinstance(v, float) and np.isnan(v)) else f"{v:+,.0f}"
+    return "" if v is None or (isinstance(v, float) and np.isnan(v)) else f"{v:+,.0f}".replace("\u2212", "-")
 
 
 def conditional_table(ev: pd.DataFrame, earn: pd.DataFrame, bench_label: str) -> tuple[str, dict]:
@@ -290,7 +290,7 @@ def takeaways(t: str, h: dict, ps, stats: dict, bench_label: str, ev: pd.DataFra
     line = f"Beats consensus {beat_rate:.0%} of the time; up vs {bench_label} on {op:.0%} of print days (band {h['outperform_ci'][0]:.0%}–{h['outperform_ci'][1]:.0%})."
     if b and m and m["n"] >= 3:
         verdict = "trades on the number" if (b["mean"] - m["mean"]) > 150 else "the number explains little"
-        line += f" Beat days {_fmt_n(b['mean'])} bps ({b['up']:.0%} up, n={b['n']}), misses {_fmt_n(m['mean'])} ({m['up']:.0%} up, n={m['n']}) — {verdict}."
+        line += f" Beat days {_fmt_n(b['mean'])} bps ({b['up']:.0%} up, n={b['n']}), misses {_fmt_n(m['mean'])} ({m['up']:.0%} up, n={m['n']}); {verdict}."
     out.append(line)
     if r and r["n"] >= 3:
         out.append(f"Run-up into the print: after a >100 bps rally it was up {r['up']:.0%} of {r['n']} times on the day (avg {_fmt_n(r['mean'])} bps).")
@@ -339,14 +339,14 @@ def build_site(out: Path = DOCS):
     # next expected prints (dates only; source = company/Yahoo calendars, labelled as expected)
     nxt = sorted([(P["fwd"].get("next_announce_date"), t) for t, P in pages.items() if P["fwd"].get("next_announce_date")])
     next_line = " · ".join(f"{t} {pd.Timestamp(d).strftime('%b %d')}" for d, t in nxt)
-    fresh = f'<p class="sub" style="font-size:12.5px"><b>Data as of {data_asof}</b> (last close in the sample). Next expected prints: {next_line or "n/a"} — dates only, from company calendars; this page shows history, not expectations.</p>'
+    fresh = f'<p class="sub" style="font-size:12.5px"><b>Data as of {data_asof}</b> (last close in the sample). Next expected prints: {next_line or "n/a"} (dates only, from company calendars; this page shows history, not expectations).</p>'
 
     # ---------- index
     n_tot = int(summary.n_events.sum())
     tiles = "".join([
         tile("Names", f"{len(summary)}", "large-cap US energy"),
         tile("Prints", f"{n_tot}", f"since {pages[tickers[0]]['h']['first_label']}"),
-        tile("Avg size of move vs peers — print day", f"{summary.avg_abs_rel_t0.mean():,.0f} bps", "up or down, averaged across names"),
+        tile("Avg size of move vs peers, print day", f"{summary.avg_abs_rel_t0.mean():,.0f} bps", "up or down, averaged across names"),
         tile("…the day before", f"{summary.avg_abs_rel_tm1.mean():,.0f} bps", "positioning day"),
         tile("…the day after", f"{summary.avg_abs_rel_tp1.mean():,.0f} bps", "follow-through day"),
         tile("Beat EPS consensus", f"{summary.beat_rate.mean():.0%}", "of prints, average across names"),
@@ -394,7 +394,7 @@ def build_site(out: Path = DOCS):
 {fresh}
 <p class="sub" style="margin-top:10px">Per-name pages: {" · ".join(f"<a href='{t}.html'>{t}</a>" for t in tickers)} · Data: <a href="summary.csv">summary.csv</a></p>
 """
-    (out / "index.html").write_text(page("Earnings print reactions — energy", body, nav, asof), encoding="utf-8")
+    (out / "index.html").write_text(page("Earnings print reactions: energy", body, nav, asof), encoding="utf-8")
 
     # ---------- ticker pages
     for i, t in enumerate(tickers):
@@ -462,7 +462,7 @@ def build_site(out: Path = DOCS):
 <h2>Every print <span class="pill">newest first · <a href="{t}_events.csv">csv</a></span></h2>{ev_table}
 {pager}
 """
-        (out / f"{t}.html").write_text(page(f"{t} — earnings print reactions", body, nav, asof), encoding="utf-8")
+        (out / f"{t}.html").write_text(page(f"{t}: earnings print reactions", body, nav, asof), encoding="utf-8")
     (out / ".nojekyll").write_text("")
     print(f"site -> {out}  ({len(pages)} ticker pages + index)")
 
