@@ -84,7 +84,7 @@ def chart_around(ev: pd.DataFrame, bench_label: str) -> str:
     fig.add_trace(go.Scatter(x=x, y=ev.tp1_rel, mode="markers", name="t+1 (day after)", marker=dict(color=C_TP1, size=7, symbol="triangle-up"), hovertemplate=hv))
     fig.add_trace(go.Scatter(x=x, y=ev.t0_rel, mode="markers", name="t0 (print day)", marker=dict(color=C_T0, size=9, symbol="square", line=dict(width=1, color="white")), hovertemplate=hv))
     fig.update_layout(title=dict(text=f"Move vs {bench_label} on the day before, the print day and the day after (bps)", font=dict(size=14)),
-                      yaxis_title="bps vs peers", xaxis=QAXIS)
+                      yaxis_title=f"bps vs {bench_label}", xaxis=QAXIS)
     return fig_html(fig, 380)
 
 
@@ -101,18 +101,18 @@ def chart_t0(ev: pd.DataFrame, bench_label: str) -> str:
     return fig_html(fig, 360)
 
 
-def chart_distribution(ev: pd.DataFrame) -> str:
+def chart_distribution(ev: pd.DataFrame, bench_label: str = "peers") -> str:
     ev = rounded(ev)
     fig = go.Figure()
     for col, name, c in (("tm1_rel", "day before (t-1)", C_TM1), ("t0_rel", "print day (t0)", C_T0), ("tp1_rel", "day after (t+1)", C_TP1)):
         fig.add_trace(go.Box(y=ev[col], name=name, marker_color=c, line=dict(width=1.2), boxpoints="all", jitter=0.35, pointpos=0,
                              marker=dict(size=4, opacity=0.55), hovertemplate="%{y:+,.0f} bps<extra>" + name + "</extra>"))
-    fig.update_layout(title=dict(text="Spread of moves vs peers, by day (each dot = one print; box = middle half, line = median)", font=dict(size=14)),
-                      yaxis_title="bps vs peers", showlegend=False)
+    fig.update_layout(title=dict(text=f"Spread of moves vs {bench_label}, by day (each dot = one print; box = middle half, line = median)", font=dict(size=14)),
+                      yaxis_title=f"bps vs {bench_label}", showlegend=False)
     return fig_html(fig, 360)
 
 
-def chart_follow_through(ev: pd.DataFrame) -> str:
+def chart_follow_through(ev: pd.DataFrame, bench_label: str = "peers") -> str:
     d = rounded(ev).dropna(subset=["tm1_rel", "t0_rel"])
     strong = d.tm1_rel > compute.FOLLOW_THROUGH_BPS
     fig = go.Figure()
@@ -124,8 +124,8 @@ def chart_follow_through(ev: pd.DataFrame) -> str:
     fig.add_trace(go.Scatter(x=d.tm1_rel[strong], y=d.t0_rel[strong], mode="markers", name=f"t-1 > +100 bps ({k}/{n} up on t0)", text=d.fq_label[strong],
                              marker=dict(color=C_T0, size=9), hovertemplate="%{text}<br>t-1 %{x:+,.0f} / t0 %{y:+,.0f} bps<extra></extra>"))
     fig.add_vline(x=0, line=dict(color="#c9c7c1", width=1)); fig.add_hline(y=0, line=dict(color="#c9c7c1", width=1))
-    fig.update_layout(title=dict(text="Did strength into the print carry through? day-before vs print-day move (bps vs peers; shaded = rallied >100 bps into the print)", font=dict(size=14)),
-                      xaxis=dict(title="day before the print (bps vs peers)", showgrid=True, gridcolor=GRID, hoverformat=",.0f"), yaxis_title="print day (bps vs peers)")
+    fig.update_layout(title=dict(text=f"Did strength into the print carry through? day-before vs print-day move (bps vs {bench_label}; shaded = rallied >100 bps into the print)", font=dict(size=14)),
+                      xaxis=dict(title=f"day before the print (bps vs {bench_label})", showgrid=True, gridcolor=GRID, hoverformat=",.0f"), yaxis_title=f"print day (bps vs {bench_label})")
     return fig_html(fig, 380)
 
 
@@ -181,8 +181,9 @@ h1{font-size:26px;margin:6px 0 6px;letter-spacing:-.2px}h2{font-size:18px;margin
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:16px 0}
 .tile{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
 .tile .k{font-size:12px;color:var(--muted)}.tile .v{font-size:21px;font-weight:600;letter-spacing:-.3px;margin-top:2px;white-space:nowrap}.tile .s{font-size:12px;color:var(--muted)}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:900px){.grid2{grid-template-columns:1fr}}
-.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 12px 4px}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}@media(max-width:900px){.grid2{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 12px 4px;min-width:0;overflow:hidden}
+.card .plotly-graph-div,.card .js-plotly-plot{width:100%!important;max-width:100%}
 .card h3.ct{font-size:13.5px;font-weight:600;color:var(--ink);margin:0 0 2px 4px}
 .obs{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 18px;margin:10px 0 6px}.obs li{margin:8px 0}
 table.sum{width:100%;border-collapse:collapse;font-size:13px;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
@@ -196,23 +197,43 @@ table.sum td.pos{color:var(--pos)}table.sum td.neg{color:var(--neg)}
 footer{margin-top:40px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:14px}
 .pager{display:flex;justify-content:space-between;font-size:13px;margin:6px 0 0}
 .events td{font-variant-numeric:tabular-nums}
+.controls{display:flex;gap:22px;flex-wrap:wrap;align-items:center;margin:14px 0 10px}
+.ctl{display:inline-flex;align-items:center;gap:4px}.ctl .lbl{font-size:12px;color:var(--muted);margin-right:4px}
+.ctl button{font:500 12.5px Inter,system-ui,sans-serif;padding:5px 11px;border:1px solid var(--line);background:var(--card);color:var(--muted);cursor:pointer}
+.ctl button:first-of-type{border-radius:8px 0 0 8px}.ctl button:last-of-type{border-radius:0 8px 8px 0}
+.ctl button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.takeaways{border-left:3px solid var(--accent)}.takeaways li{margin:6px 0}
+table.cond th,table.cond td{text-align:right}table.cond th:first-child,table.cond td:first-child{text-align:left}
+table.cond tr.grp th{text-align:left}
 """
 SORT_JS = """
 document.querySelectorAll('table.sortable thead tr:not(.grp) th').forEach((th,i)=>{th.addEventListener('click',()=>{
- const tb=th.closest('table').tBodies[0];const rows=[...tb.rows];const num=v=>parseFloat(v.replace(/[%,()+]/g,'').replace(/^\\((.*)\\)$/,'-$1'));
+ const tb=th.closest('table').tBodies[0];const rows=[...tb.rows];
  const asc=!(th.dataset.asc==='1');th.dataset.asc=asc?'1':'0';
  rows.sort((a,b)=>{const x=a.cells[i].dataset.v??a.cells[i].innerText,y=b.cells[i].dataset.v??b.cells[i].innerText;
   const nx=parseFloat(x),ny=parseFloat(y);const c=(isNaN(nx)||isNaN(ny))?x.localeCompare(y):nx-ny;return asc?c:-c;});
  rows.forEach(r=>tb.appendChild(r));});});
+// peers / ETF toggle
+function showBench(which){
+  document.querySelectorAll('.bench').forEach(el=>{el.hidden = !el.classList.contains(which);});
+  document.querySelectorAll('[data-bench]').forEach(b=>b.classList.toggle('on', b.dataset.bench===which));
+  document.querySelectorAll('.bench:not([hidden]) .plotly-graph-div').forEach(d=>Plotly.Plots.resize(d));
+}
+// all / last-20 quarters
+function showRange(which){
+  document.querySelectorAll('[data-range]').forEach(b=>b.classList.toggle('on', b.dataset.range===which));
+  document.querySelectorAll('.qchart').forEach(d=>{const n=parseInt(d.dataset.n||'0');
+    if(which==='last20' && n>20){Plotly.relayout(d,{'xaxis.range':[n-20.5,n-0.5]});}else{Plotly.relayout(d,{'xaxis.autorange':true});}});
+}
 """
-PLOTLY_CDN = '<script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>'
+PLOTLY_TAG = '<script src="plotly.min.js" charset="utf-8"></script>'
 
 
 def page(title: str, body: str, nav_links: list[tuple[str, str]], asof: str) -> str:
     nav = "".join(f'<a href="{h}">{html.escape(t)}</a>' for t, h in nav_links)
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)}</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>{CSS}</style>{PLOTLY_CDN}</head><body>
+<style>{CSS}</style>{PLOTLY_TAG}</head><body>
 <header class="top"><div class="wrap"><span class="brand"><a href="index.html" style="color:inherit">Earnings print reactions</a> <span class="pill">energy · 1Q16 → latest</span></span><nav>{nav}</nav></div></header>
 <main class="wrap">{body}</main>
 <footer class="wrap">Data: S&amp;P Capital IQ (daily closes, announce dates, EPS actual &amp; pre-print consensus); release timing (BMO/AMC) from company timestamps. Built {asof}. Historical description only — not a recommendation.</footer>
@@ -223,12 +244,71 @@ def tile(k, v, s=""):
     return f'<div class="tile"><div class="k">{k}</div><div class="v">{v}</div><div class="s">{s}</div></div>'
 
 
+def _fmt_n(v):
+    return "" if v is None or (isinstance(v, float) and np.isnan(v)) else f"{v:+,.0f}"
+
+
+def conditional_table(ev: pd.DataFrame, earn: pd.DataFrame, bench_label: str) -> tuple[str, dict]:
+    """Print-day move vs benchmark split by (a) EPS beat / miss / in line and (b) rallied into the print or not.
+    Returns (html, stats dict used for takeaways)."""
+    e = earn.set_index("fq_label")
+    d = ev.dropna(subset=["t0_rel"]).copy()
+    cons = e["eps_est_preprint"].where(e["eps_est_preprint"].notna(), e["eps_est"])
+    d["eps_actual"] = d.fq_label.map(e["eps_actual"]); d["cons"] = d.fq_label.map(cons)
+    diff = d.eps_actual - d.cons
+    d["eps_grp"] = np.where(diff > 0.0001, "Beat consensus", np.where(diff < -0.0001, "Missed consensus", "In line"))
+    d.loc[diff.isna(), "eps_grp"] = "No estimate"
+    d["in_grp"] = np.where(d.tm1_rel > compute.FOLLOW_THROUGH_BPS, "Rallied >100 bps into the print",
+                           np.where(d.tm1_rel < -compute.FOLLOW_THROUGH_BPS, "Sold off >100 bps into the print", "Flat into the print (±100)"))
+    rows, stats = [], {}
+    def block(label, col, order):
+        rows.append(f"<tr class='grp'><th colspan='6' style='text-align:left'>{label}</th></tr>")
+        for g in order:
+            sub = d[d[col] == g]
+            if sub.empty:
+                continue
+            n = len(sub); up = float((sub.t0_rel > 0).mean()); mean = float(sub.t0_rel.mean()); med = float(sub.t0_rel.median()); ab = float(sub.t0_abs.mean())
+            stats[g] = dict(n=n, up=up, mean=mean, med=med)
+            cls = "pos" if mean > 0 else ("neg" if mean < 0 else "")
+            rows.append(f"<tr><td>{g}</td><td>{n}</td><td class='{cls}'>{_fmt_n(mean)}</td><td>{_fmt_n(med)}</td><td>{up:.0%}</td><td>{_fmt_n(ab)}</td></tr>")
+    block("By EPS vs the consensus the day before", "eps_grp", ["Beat consensus", "Missed consensus", "In line", "No estimate"])
+    block(f"By how the stock traded the day before (vs {bench_label})", "in_grp", ["Rallied >100 bps into the print", "Flat into the print (±100)", "Sold off >100 bps into the print"])
+    html_ = f"""<div class="tablewrap"><table class="sum cond"><thead><tr><th style="text-align:left">Condition</th><th title="number of prints">Prints</th>
+<th title="average print-day move vs {bench_label}">Avg print-day move vs {bench_label}</th><th title="median print-day move vs {bench_label}">Median</th>
+<th title="share of prints where the stock beat {bench_label} on the print day">Share up</th><th title="average of the stock's own print-day move">Stock itself (avg)</th></tr></thead>
+<tbody>{''.join(rows)}</tbody></table></div>"""
+    return html_, stats
+
+
+def takeaways(t: str, h: dict, ps, stats: dict, bench_label: str, ev: pd.DataFrame) -> list[str]:
+    n = h["n_prints"]; op = h["outperform"] / max(n, 1); beat_rate = h["beats"] / max(h["n_eps"], 1)
+    out = []
+    gap = "but" if (beat_rate >= 0.6 and op < 0.5) else ("and" if (beat_rate >= 0.6 and op >= 0.5) else "while")
+    out.append(f"{t} beat EPS consensus in {beat_rate:.0%} of {h['n_eps']} prints, {gap} it beat {bench_label} on the print day in only {op:.0%} of them"
+               if op < 0.5 else f"{t} beat EPS consensus in {beat_rate:.0%} of {h['n_eps']} prints, {gap} it beat {bench_label} on the print day in {op:.0%} of them"
+               )
+    out[-1] += f" (90% band {h['outperform_ci'][0]:.0%}–{h['outperform_ci'][1]:.0%})."
+    b, m = stats.get("Beat consensus"), stats.get("Missed consensus")
+    if b and m and m["n"] >= 3:
+        out.append(f"Beats moved it {_fmt_n(b['mean'])} bps vs {bench_label} on average (up {b['up']:.0%} of {b['n']}); misses {_fmt_n(m['mean'])} bps (up {m['up']:.0%} of {m['n']}) — "
+                   + ("the number matters." if (b["mean"] - m["mean"]) > 150 else "the number explains little of the print-day move."))
+    elif b:
+        out.append(f"Beats moved it {_fmt_n(b['mean'])} bps vs {bench_label} on average (up {b['up']:.0%} of {b['n']}); too few misses ({m['n'] if m else 0}) to compare.")
+    r = stats.get("Rallied >100 bps into the print")
+    if r and r["n"] >= 3:
+        out.append(f"After rallying >100 bps vs {bench_label} into the print it was up on the print day {r['up']:.0%} of {r['n']} times (avg {_fmt_n(r['mean'])} bps).")
+    out.append(f"Typical print-day move: {h['avg_abs_t0_rel']:,.0f} bps vs {bench_label} / {h['avg_abs_t0_abs']:,.0f} bps outright; the day-after move averages "
+               f"{_fmt_n(ev.tp1_rel.mean())} bps vs {bench_label}.")
+    return out
+
+
 def build_site(out: Path = DOCS):
     out.mkdir(parents=True, exist_ok=True)
     uni = pd.read_csv(UNIVERSE_CSV).set_index("ticker")
     overrides = pd.read_csv(TIMING_OVERRIDES_CSV) if TIMING_OVERRIDES_CSV.exists() else pd.DataFrame()
     con = db.connect(DB_PATH)
     asof = dt.date.today().isoformat()
+    data_asof = pd.read_sql("select max(date) d from prices", con).iloc[0, 0]
     results, pages = {}, {}
     tickers = list(uni.index)
     for t in tickers:
@@ -245,16 +325,22 @@ def build_site(out: Path = DOCS):
         bench_label = f"{row.peer_group} peers"
         ev = compute.event_returns(prices, earn, t, rb, overrides)
         ev_etf = compute.event_returns(prices, earn, t, chain, overrides)
-        ps = compute.panel_stats(ev)
-        h = compute.header_stats_hist(ev, earn, ps)
-        h["first_label"] = ev.fq_label.iloc[0]
+        ps, ps_etf = compute.panel_stats(ev), compute.panel_stats(ev_etf)
+        h = compute.header_stats_hist(ev, earn, ps); h["first_label"] = ev.fq_label.iloc[0]
+        h_etf = compute.header_stats_hist(ev_etf, earn, ps_etf); h_etf["first_label"] = h["first_label"]
         eps = compute.eps_history(earn)
-        results[t] = (ev, ps, {"header": h, "ps_etf": compute.panel_stats(ev_etf), "bench_label": bench_label, "peers": [p for p in peers if p != t]})
-        pages[t] = dict(ev=ev, ps=ps, h=h, eps=eps, bench_label=bench_label, peers=[p for p in peers if p != t], bench=bench, row=row)
+        results[t] = (ev, ps, {"header": h, "ps_etf": ps_etf, "bench_label": bench_label, "peers": [p for p in peers if p != t]})
+        pages[t] = dict(ev=ev, ev_etf=ev_etf, ps=ps, ps_etf=ps_etf, h=h, h_etf=h_etf, eps=eps, earn=earn, bench_label=bench_label,
+                        peers=[p for p in peers if p != t], bench=bench, row=row, fwd=db.read_forward(con, t))
     summary = summarise(results)
     summary.to_csv(out / "summary.csv", index=False)
     bullets = observations(summary, results, uni)
     nav = [("Overview", "index.html")] + [(t, f"{t}.html") for t in tickers]
+
+    # next expected prints (dates only; source = company/Yahoo calendars, labelled as expected)
+    nxt = sorted([(P["fwd"].get("next_announce_date"), t) for t, P in pages.items() if P["fwd"].get("next_announce_date")])
+    next_line = " · ".join(f"{t} {pd.Timestamp(d).strftime('%b %d')}" for d, t in nxt)
+    fresh = f'<p class="sub" style="font-size:12.5px"><b>Data as of {data_asof}</b> (last close in the sample). Next expected prints: {next_line or "n/a"} — dates only, from company calendars; this page shows history, not expectations.</p>'
 
     # ---------- index
     n_tot = int(summary.n_events.sum())
@@ -301,6 +387,7 @@ def build_site(out: Path = DOCS):
 <h1>How liquid US energy names trade around earnings</h1>
 <p class="sub">Every quarterly print since 1Q16 for nine large, liquid energy names: how the stock moved versus its peers the day before the print, on the print day and the day after — and how reported EPS compared with the consensus that stood the day before. All moves are in basis points (100 bps = 1%).</p>
 <div class="method"><b>Method.</b> Relative = stock minus equal-weight peer basket ex-self (OFS: HAL/SLB/BKR · Producers: XOM/CVX/COP/EOG/OXY/FANG), close-to-close, in basis points. t0 = first full session reflecting the release (BMO → announce day; AMC → next session). Consensus = mean EPS estimate the day before the print. Source: S&amp;P Capital IQ.</div>
+{fresh}
 <div class="tiles">{tiles}</div>
 <h2>What the numbers say</h2><div class="obs">{obs}</div>
 <h2>Across the group</h2>
@@ -314,44 +401,63 @@ def build_site(out: Path = DOCS):
     for i, t in enumerate(tickers):
         if t not in pages:
             continue
-        P = pages[t]; ev, ps, h, eps = P["ev"], P["ps"], P["h"], P["eps"]
+        P = pages[t]; ev, ps, h, eps, earn = P["ev"], P["ps"], P["h"], P["eps"], P["earn"]
         prev_t, next_t = tickers[i - 1] if i > 0 else None, tickers[i + 1] if i < len(tickers) - 1 else None
+        nq = len(ev)
+
+        def charts_for(evx, label, key):
+            """Chart block for one benchmark definition (peers or ETF); quarter charts tagged for the range toggle."""
+            c1 = chart_around(evx, label).replace('class="plotly-graph-div"', f'class="plotly-graph-div qchart" data-n="{nq}"', 1)
+            c2 = chart_t0(evx, label).replace('class="plotly-graph-div"', f'class="plotly-graph-div qchart" data-n="{nq}"', 1)
+            cond_html, st = conditional_table(evx, earn, label)
+            return (f'<div class="grid2"><div class="card">{c1}</div><div class="card">{c2}</div>'
+                    f'<div class="card">{chart_distribution(evx, label)}</div><div class="card">{chart_follow_through(evx, label)}</div></div>'
+                    f'<h2>Print-day move by condition <span class="pill">vs {label}</span></h2>{cond_html}'), st
+
+        peers_block, st_peers = charts_for(ev, P["bench_label"], "peers")
+        etf_block, st_etf = charts_for(P["ev_etf"], P["bench"], "etf")
+        tk = takeaways(t, h, ps, st_peers, P["bench_label"], ev)
         big = ev.loc[ev.t0_rel.abs().idxmax()] if ev.t0_rel.notna().any() else None
         tiles = "".join([
             tile("Prints", f"{h['n_prints']}", f"{h['first_label']} → {ev.fq_label.iloc[-1]}"),
-            tile(f"Beat {P['bench_label']} on the print day", f"{h['outperform']}/{h['n_prints']} · {h['outperform'] / max(h['n_prints'], 1):.0%}", f"90% confidence band {h['outperform_ci'][0]:.0%}–{h['outperform_ci'][1]:.0%}"),
+            tile(f"Beat {P['bench_label']} on the print day", f"{h['outperform']}/{h['n_prints']} · {h['outperform'] / max(h['n_prints'], 1):.0%}", f"90% band {h['outperform_ci'][0]:.0%}–{h['outperform_ci'][1]:.0%} · vs {P['bench']}: {P['h_etf']['outperform'] / max(P['h_etf']['n_prints'], 1):.0%}"),
             tile("Avg size of print-day move", f"{h['avg_abs_t0_rel']:,.0f} bps vs peers", f"{h['avg_abs_t0_abs']:,.0f} bps the stock itself"),
             tile("Beat / miss consensus", f"{h['beats']} / {h['misses']}", f"pre-print mean · {h['inline']} in line · n={h['n_eps']}"),
-            tile(f"Last print · {h['last_q_label']}", f"{pct(h['last_t0_abs'], 1)} abs", f"{pct(h['last_t0_rel'], 1)} rel · surprise {pct(h['last_surprise'], 1)} · {h['last_date']}"),
+            tile(f"Last print · {h['last_q_label']}", f"{pct(h['last_t0_abs'], 1)} abs", f"{pct(h['last_t0_rel'], 1)} vs peers · surprise {pct(h['last_surprise'], 1)} · {h['last_date']}"),
             tile("Biggest print-day move vs peers", f"{bps(big.t0_rel)} bps" if big is not None else "n/a", f"{big.fq_label} · {pd.Timestamp(big.t0).date()}" if big is not None else ""),
         ])
+        em = earn.set_index("fq_label")
+        etf_t0 = P["ev_etf"].set_index("fq_label")["t0_rel"]
         ev_rows = []
-        em = earn_map = db.read_earnings(con, t).set_index("fq_label")
         for r in ev.iloc[::-1].itertuples():
             e = em.loc[r.fq_label] if r.fq_label in em.index else None
             cls = lambda v: "pos" if (v is not None and not pd.isna(v) and v > 0) else ("neg" if (v is not None and not pd.isna(v) and v < 0) else "")
             est = e.eps_est_preprint if e is not None and not pd.isna(e.eps_est_preprint) else (e.eps_est if e is not None else np.nan)
+            ve = etf_t0.get(r.fq_label, np.nan)
             ev_rows.append(f"<tr><td>{r.fq_label}</td><td>{pd.Timestamp(r.announce_date).date()}</td><td>{r.timing or ''}</td><td>{pd.Timestamp(r.t0).date() if not pd.isna(r.t0) else ''}</td>"
                            f"<td class='{cls(r.tm1_rel)}'>{bps(r.tm1_rel)}</td><td class='{cls(r.t0_rel)}'>{bps(r.t0_rel)}</td><td class='{cls(r.tp1_rel)}'>{bps(r.tp1_rel)}</td>"
-                           f"<td class='{cls(r.t0_abs)}'>{bps(r.t0_abs)}</td>"
+                           f"<td class='{cls(ve)}'>{bps(ve)}</td><td class='{cls(r.t0_abs)}'>{bps(r.t0_abs)}</td>"
                            f"<td>{'' if pd.isna(est) else f'{est:.2f}'}</td><td>{'' if e is None or pd.isna(e.eps_actual) else f'{e.eps_actual:.2f}'}</td>"
                            f"<td class='{cls(e.eps_surprise_pct if e is not None else None)}'>{'' if e is None or pd.isna(e.eps_surprise_pct) else f'{e.eps_surprise_pct:+.1f}%'}</td></tr>")
-        ev_table = f"""<div class="tablewrap"><table class="sum sortable events"><thead><tr class="grp"><th></th><th></th><th></th><th></th><th colspan="3">Move vs peers (bps)</th><th>Stock (bps)</th><th colspan="3">EPS ($)</th></tr>
-<tr><th title="Fiscal quarter reported">Quarter</th><th title="Release date">Announced</th><th title="BMO = before the open, AMC = after the close">Timing</th><th title="First full session reflecting the release">Print day</th><th title="Day before the print, vs peers">day before</th><th title="Print day, vs peers">print day</th><th title="Day after the print, vs peers">day after</th><th title="The stock's own print-day move">print day</th><th title="Consensus the day before the print">consensus</th><th>reported</th><th title="(reported - consensus) / |consensus|">surprise</th></tr></thead><tbody>{''.join(ev_rows)}</tbody></table></div>"""
+        ev_table = f"""<div class="tablewrap"><table class="sum sortable events"><thead><tr class="grp"><th></th><th></th><th></th><th></th><th colspan="3">Move vs peers (bps)</th><th>vs {P['bench']}</th><th>Stock (bps)</th><th colspan="3">EPS ($)</th></tr>
+<tr><th title="Fiscal quarter reported">Quarter</th><th title="Release date">Announced</th><th title="BMO = before the open, AMC = after the close">Timing</th><th title="First full session reflecting the release">Print day</th><th title="Day before the print, vs peers">day before</th><th title="Print day, vs peers">print day</th><th title="Day after the print, vs peers">day after</th><th title="Print day, vs the sector ETF">print day</th><th title="The stock's own print-day move">print day</th><th title="Consensus the day before the print">consensus</th><th>reported</th><th title="(reported - consensus) / |consensus|">surprise</th></tr></thead><tbody>{''.join(ev_rows)}</tbody></table></div>"""
         ev.to_csv(out / f"{t}_events.csv", index=False)
         pager = f"<div class='pager'><span>{'← ' + f'<a href=\"{prev_t}.html\">{prev_t}</a>' if prev_t else ''}</span><span>{f'<a href=\"{next_t}.html\">{next_t}</a> →' if next_t else ''}</span></div>"
+        tk_html = "<ul>" + "".join(f"<li>{html.escape(b)}</li>" for b in tk) + "</ul>"
+        controls = f"""<div class="controls">
+<span class="ctl"><span class="lbl">Measure vs</span><button data-bench="peers" class="on" onclick="showBench('peers')">{html.escape(P['bench_label'])}</button><button data-bench="etf" onclick="showBench('etf')">{P['bench']} (ETF)</button></span>
+<span class="ctl"><span class="lbl">Quarters</span><button data-range="all" class="on" onclick="showRange('all')">all {nq}</button><button data-range="last20" onclick="showRange('last20')">last 20</button></span>
+</div>"""
         body = f"""
 <p class="sub" style="margin:0"><a href="index.html">← Overview</a></p>
 <h1>{t} <span class="pill">{html.escape(str(P['row']['notes']))}</span> <span class="pill">{P['row']['sector']}</span> <span class="pill">peers: {', '.join(P['peers'])}</span> <span class="pill">ETF: {P['bench']}</span></h1>
 <p class="sub">"vs peers" = {t}'s close-to-close move minus the equal-weight average of {', '.join(P['peers'])} that day, in basis points (100 bps = 1%). Hover any point for the quarter.</p>
+<div class="obs takeaways">{tk_html}</div>
 <div class="tiles">{tiles}</div>
-<div class="grid2">
-<div class="card">{chart_around(ev, P['bench_label'])}</div>
-<div class="card">{chart_t0(ev, P['bench_label'])}</div>
-<div class="card">{chart_distribution(ev)}</div>
-<div class="card">{chart_follow_through(ev)}</div>
-</div>
-<div class="card" style="margin-top:16px">{chart_eps(eps)}</div>
+{controls}
+<div class="bench peers">{peers_block}</div>
+<div class="bench etf" hidden>{etf_block}</div>
+<div class="card" style="margin-top:16px">{chart_eps(eps).replace('class="plotly-graph-div"', f'class="plotly-graph-div qchart" data-n="{len(eps)}"', 1)}</div>
 <h2>Every print <span class="pill">newest first · <a href="{t}_events.csv">csv</a></span></h2>{ev_table}
 {pager}
 """
