@@ -23,6 +23,8 @@ python -m src.site                       # GitHub-Pages site -> docs/ (index.htm
 3. Share `https://<user>.github.io/<repo>/` — the overview page; each name is `<TICKER>.html`. Re-run `python -m src.site` and push to update.
 Preview locally: `python -m http.server 8765 --directory docs` (or the `docs-site` entry in `.claude/launch.json`).
 
+Site features: per-name takeaways (generated from the numbers), print-day move by condition (beat/miss consensus; rallied/flat/sold-off into the print),
+peers-vs-ETF and all-vs-last-20-quarters toggles, bundled Plotly (works offline / behind CDN blocks), data-as-of + next expected print dates.
 Site design: light theme, Inter, KPI tiles, sortable summary table, one fixed colour role per window (t0 blue, t-1 orange, t+1 aqua;
 blue/red only where sign is the message), hover tooltips on every mark, n and 90% Wilson bands on every hit rate, method strip on every page.
 
