@@ -4,9 +4,44 @@
   "Fade the run-up: drifts +30 bps vs peers into the print; after a >100 bps rally into it, up only 6 of 12 times on the day (avg −41 bps).",
   "Size for ~270 bps vs peers (320 bps outright); 1 in 3 prints moves >300 bps, range −861 (2Q18) to +1,094 (3Q25). No day-after drift (+20 bps)."
  ],
+ "SLB": [
+  "The beat is priced in: 39/42 beats, yet beat days averaged +7 bps vs HAL/BKR (median −86) and it lagged peers on 60% of print days — the worst hit rate in the group.",
+  "Buy the sell-off, not the rally: prints it sold off >100 bps into averaged +78 bps on the day (5 of 7 up); rallied-into prints were 4 of 10 up (avg −28).",
+  "Size for ~260 bps vs peers (280 bps outright); 29% of prints >300 bps. Recent tape is negative — 6 of the last 8 prints down vs peers, then +898 bps on 2Q26."
+ ],
  "BKR": [
   "Trades on the number: beats +170 bps vs HAL/SLB (73% up, n=22), misses −71 bps (47% up, n=15). Best hit rate in the group — up vs peers on 62% of print days.",
   "Biggest mover: 343 bps avg vs peers, 47% of prints >300 bps (+914 2Q25, −813 4Q23). Sold-off-into prints averaged +241 bps; rallied-into only 42% up.",
   "AMC reporter since 3Q23 — reaction is the next session. 6 of the last 8 prints up vs peers, most by >300 bps."
+ ],
+ "XOM": [
+  "Quietest print in the group: 131 bps avg vs producer peers (204 bps outright); only 2 of 42 prints moved >300 bps vs peers (max +342, min −313). Little to trade on the day itself.",
+  "Asymmetric: beats are a non-event (+16 bps, 52% up, n=29), misses cost −128 bps vs peers (31% up, n=13). The 13 misses are where the risk sits.",
+  "Drifts +27 bps into the print and gives back −28 on the day and −23 the day after — a modest 'sell the print' pattern; up vs peers on only 45% of print days."
+ ],
+ "CVX": [
+  "Trades on the number, cleanly: beats +165 bps vs producer peers (79% up, n=28), misses −173 bps (14% up, n=14) — the widest beat/miss gap in the group.",
+  "Not run into: trades −13 bps vs peers the day before, then +52 on the day and +16 the day after. Up vs peers on 57% of print days (median +97).",
+  "Size for ~215 bps vs peers (255 bps outright); 26% of prints >300 bps (+484 2Q22, −541 3Q23). 7 of the last 8 prints up vs peers."
+ ],
+ "COP": [
+  "Beats pay, misses hurt: beat days +88 bps vs producer peers (68% up, n=31), misses −114 bps (27% up, n=11). Up vs peers on 57% of print days.",
+  "Compact mover: 168 bps avg vs peers (216 bps outright); only 14% of prints >300 bps (+602 3Q24, −528 4Q19). Day-after drift −10 bps — no follow-through to lean on.",
+  "Recent tape has turned: 6 of the last 7 prints down vs peers (−325 bps on 3Q25) despite a 74% lifetime beat rate."
+ ],
+ "EOG": [
+  "The number doesn't drive it: beat days −17 bps vs producer peers (47% up, n=30), misses −27 bps (58% up, n=12). Up vs peers on exactly 50% of print days.",
+  "Momentum name into the print: after a >100 bps rally into it, up 5 of 7 times on the day (avg +131 bps); flat-into prints averaged −61 bps (42% up).",
+  "Big swings: 274 bps avg vs peers (319 bps outright), 40% of prints >300 bps (+642 3Q24, −716 4Q20). AMC reporter — reaction is the next session."
+ ],
+ "OXY": [
+  "Misses are punished, beats rewarded modestly: beat days +61 bps vs producer peers (62% up, n=29), misses −250 bps (31% up, n=13).",
+  "Fade the run-up hard: after a >100 bps rally into the print it was up only 1 of 5 times (avg −373 bps); flat-into prints +13 bps (58% up).",
+  "Second-biggest mover: 307 bps avg vs peers (366 bps outright), 38% of prints >300 bps (+871 4Q25, −1,055 1Q20). Unusual: +40 bps avg drift the day after. AMC reporter."
+ ],
+ "FANG": [
+  "Beats pay a little, misses cost a little: beat days +74 bps vs producer peers (58% up, n=31), misses −85 bps (45% up, n=11). Up vs peers on 55% of print days.",
+  "Don't chase it: rallied-into prints were 3 of 8 up (avg −17 bps); sold-off-into prints averaged +203 bps (3 of 4 up). Day-after drift is the group's worst at −51 bps.",
+  "Size for ~230 bps vs peers (290 bps outright); 29% of prints >300 bps (+705 1Q19, −1,157 3Q19). All of the last 8 prints were down vs peers. AMC reporter."
  ]
 }
