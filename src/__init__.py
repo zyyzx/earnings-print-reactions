@@ -1,0 +1,1 @@
+"""Earnings reaction tracker package."""

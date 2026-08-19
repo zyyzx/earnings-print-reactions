@@ -1,0 +1,25 @@
+{
+ "etf_only": true,
+ "sheets": {
+  "Prices": {
+   "XLE": {
+    "date_col": "B",
+    "close_col": "C",
+    "first_row": 8,
+    "formula_cell": "C7"
+   },
+   "OIH": {
+    "date_col": "E",
+    "close_col": "F",
+    "first_row": 8,
+    "formula_cell": "F7"
+   },
+   "SPY": {
+    "date_col": "H",
+    "close_col": "I",
+    "first_row": 8,
+    "formula_cell": "I7"
+   }
+  }
+ }
+}

@@ -1,0 +1,10 @@
+ticker,ciq_ticker,va_ticker,benchmark,peer_group,timing_default,sector,fye_month,implied_move,notes
+HAL,NYSE:HAL,HAL,OIH,OFS,BMO,OFS,12,,Halliburton
+SLB,NYSE:SLB,SLB,OIH,OFS,BMO,OFS,12,,SLB (Schlumberger)
+BKR,NASDAQGS:BKR,BKR,OIH,OFS,BMO,OFS,12,,Baker Hughes
+XOM,NYSE:XOM,XOM,XLE,Producers,BMO,Integrated,12,,Exxon Mobil
+CVX,NYSE:CVX,CVX,XLE,Producers,BMO,Integrated,12,,Chevron
+COP,NYSE:COP,COP,XLE,Producers,BMO,E&P,12,,ConocoPhillips
+EOG,NYSE:EOG,EOG,XLE,Producers,AMC,E&P,12,,EOG Resources
+OXY,NYSE:OXY,OXY,XLE,Producers,AMC,E&P,12,,Occidental
+FANG,NASDAQGS:FANG,FANG,XLE,Producers,AMC,E&P,12,,Diamondback Energy
