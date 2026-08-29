@@ -1,0 +1,6 @@
+ticker,ciq_ticker,timing_default,fye_month,notes,role
+OSW,NASDAQCM:OSW,BMO,12,OneSpaWorld,focus
+RCL,NYSE:RCL,BMO,12,Royal Caribbean,peer
+CCL,NYSE:CCL,BMO,11,Carnival (Nov FYE),peer
+NCLH,NYSE:NCLH,BMO,12,Norwegian,peer
+VIK,NYSE:VIK,BMO,12,Viking (IPO May-24),peer

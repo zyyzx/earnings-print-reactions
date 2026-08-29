@@ -110,6 +110,12 @@ Yahoo-sourced HAL/BKR reproduce the Jul-2023 tweet screenshots on overlapping qu
 HAL 1Q23 EPS-day −354 bps (tweet: −3.5%), BKR 1Q23 +359 bps (tweet: +3.6%), BKR 2Q22 ≈ −826 / 3Q22 ≈ +608 bps
 (tweet ≈ −750 / +600). BKR's switch to after-close reporting in Oct-2023 is picked up from timestamps.
 
+## Earnings pack for any name (skill)
+`src/cruise.py` is group-parameterized: `python -m src.cruise {workbook|yahoo|ingest|pack|charts} --group <g> [--start 1Q23] [--focus T]`
+with `config/<g>_universe.csv` (ticker, ciq_ticker, timing_default, fye_month, notes, role focus|peer). Yahoo bootstraps prices/EPS/dates;
+the generated `ciq_pull_<g>.xlsx` adds Rev/EBITDA consensus after one Excel refresh. Outputs in `output/<g>/`: Excel pack, per-ticker price+prints
+PNGs, beats panels, indexed comparison, focus-vs-peers print-day panel. Invoke via the personal skill `/earnings-pack` (~/.claude/skills/earnings-pack).
+
 ## Next (plan Phase 3)
 Universe screen via `SP_CONSTITUENTS` + liquidity filters; implied move from IBKR options; Excel renderer with
 native charts + ticker dropdown; dispersion / rating-change / revenue-surprise overlays; sector heat-map for the

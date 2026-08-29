@@ -1,0 +1,3909 @@
+{
+ "n_quarters": 14,
+ "sheets": {
+  "Prices": {
+   "OSW": {
+    "date_col": "B",
+    "close_col": "C",
+    "first_row": 8
+   },
+   "RCL": {
+    "date_col": "E",
+    "close_col": "F",
+    "first_row": 8
+   },
+   "CCL": {
+    "date_col": "H",
+    "close_col": "I",
+    "first_row": 8
+   },
+   "NCLH": {
+    "date_col": "K",
+    "close_col": "L",
+    "first_row": 8
+   },
+   "VIK": {
+    "date_col": "N",
+    "close_col": "O",
+    "first_row": 8
+   }
+  },
+  "Earnings": {
+   "OSW": {
+    "value_col": "F",
+    "rows": [
+     {
+      "row": 10,
+      "key": "announce_date",
+      "offset": -13
+     },
+     {
+      "row": 11,
+      "key": "period_end",
+      "offset": -13
+     },
+     {
+      "row": 12,
+      "key": "fq_label",
+      "offset": -13
+     },
+     {
+      "row": 13,
+      "key": "rev_est",
+      "offset": -13
+     },
+     {
+      "row": 14,
+      "key": "rev_actual",
+      "offset": -13
+     },
+     {
+      "row": 15,
+      "key": "rev_surprise_pct",
+      "offset": -13
+     },
+     {
+      "row": 16,
+      "key": "ebitda_est",
+      "offset": -13
+     },
+     {
+      "row": 17,
+      "key": "ebitda_actual",
+      "offset": -13
+     },
+     {
+      "row": 18,
+      "key": "eps_est",
+      "offset": -13
+     },
+     {
+      "row": 19,
+      "key": "eps_actual",
+      "offset": -13
+     },
+     {
+      "row": 20,
+      "key": "eps_surprise_pct",
+      "offset": -13
+     },
+     {
+      "row": 21,
+      "key": "announce_date",
+      "offset": -12
+     },
+     {
+      "row": 22,
+      "key": "period_end",
+      "offset": -12
+     },
+     {
+      "row": 23,
+      "key": "fq_label",
+      "offset": -12
+     },
+     {
+      "row": 24,
+      "key": "rev_est",
+      "offset": -12
+     },
+     {
+      "row": 25,
+      "key": "rev_actual",
+      "offset": -12
+     },
+     {
+      "row": 26,
+      "key": "rev_surprise_pct",
+      "offset": -12
+     },
+     {
+      "row": 27,
+      "key": "ebitda_est",
+      "offset": -12
+     },
+     {
+      "row": 28,
+      "key": "ebitda_actual",
+      "offset": -12
+     },
+     {
+      "row": 29,
+      "key": "eps_est",
+      "offset": -12
+     },
+     {
+      "row": 30,
+      "key": "eps_actual",
+      "offset": -12
+     },
+     {
+      "row": 31,
+      "key": "eps_surprise_pct",
+      "offset": -12
+     },
+     {
+      "row": 32,
+      "key": "announce_date",
+      "offset": -11
+     },
+     {
+      "row": 33,
+      "key": "period_end",
+      "offset": -11
+     },
+     {
+      "row": 34,
+      "key": "fq_label",
+      "offset": -11
+     },
+     {
+      "row": 35,
+      "key": "rev_est",
+      "offset": -11
+     },
+     {
+      "row": 36,
+      "key": "rev_actual",
+      "offset": -11
+     },
+     {
+      "row": 37,
+      "key": "rev_surprise_pct",
+      "offset": -11
+     },
+     {
+      "row": 38,
+      "key": "ebitda_est",
+      "offset": -11
+     },
+     {
+      "row": 39,
+      "key": "ebitda_actual",
+      "offset": -11
+     },
+     {
+      "row": 40,
+      "key": "eps_est",
+      "offset": -11
+     },
+     {
+      "row": 41,
+      "key": "eps_actual",
+      "offset": -11
+     },
+     {
+      "row": 42,
+      "key": "eps_surprise_pct",
+      "offset": -11
+     },
+     {
+      "row": 43,
+      "key": "announce_date",
+      "offset": -10
+     },
+     {
+      "row": 44,
+      "key": "period_end",
+      "offset": -10
+     },
+     {
+      "row": 45,
+      "key": "fq_label",
+      "offset": -10
+     },
+     {
+      "row": 46,
+      "key": "rev_est",
+      "offset": -10
+     },
+     {
+      "row": 47,
+      "key": "rev_actual",
+      "offset": -10
+     },
+     {
+      "row": 48,
+      "key": "rev_surprise_pct",
+      "offset": -10
+     },
+     {
+      "row": 49,
+      "key": "ebitda_est",
+      "offset": -10
+     },
+     {
+      "row": 50,
+      "key": "ebitda_actual",
+      "offset": -10
+     },
+     {
+      "row": 51,
+      "key": "eps_est",
+      "offset": -10
+     },
+     {
+      "row": 52,
+      "key": "eps_actual",
+      "offset": -10
+     },
+     {
+      "row": 53,
+      "key": "eps_surprise_pct",
+      "offset": -10
+     },
+     {
+      "row": 54,
+      "key": "announce_date",
+      "offset": -9
+     },
+     {
+      "row": 55,
+      "key": "period_end",
+      "offset": -9
+     },
+     {
+      "row": 56,
+      "key": "fq_label",
+      "offset": -9
+     },
+     {
+      "row": 57,
+      "key": "rev_est",
+      "offset": -9
+     },
+     {
+      "row": 58,
+      "key": "rev_actual",
+      "offset": -9
+     },
+     {
+      "row": 59,
+      "key": "rev_surprise_pct",
+      "offset": -9
+     },
+     {
+      "row": 60,
+      "key": "ebitda_est",
+      "offset": -9
+     },
+     {
+      "row": 61,
+      "key": "ebitda_actual",
+      "offset": -9
+     },
+     {
+      "row": 62,
+      "key": "eps_est",
+      "offset": -9
+     },
+     {
+      "row": 63,
+      "key": "eps_actual",
+      "offset": -9
+     },
+     {
+      "row": 64,
+      "key": "eps_surprise_pct",
+      "offset": -9
+     },
+     {
+      "row": 65,
+      "key": "announce_date",
+      "offset": -8
+     },
+     {
+      "row": 66,
+      "key": "period_end",
+      "offset": -8
+     },
+     {
+      "row": 67,
+      "key": "fq_label",
+      "offset": -8
+     },
+     {
+      "row": 68,
+      "key": "rev_est",
+      "offset": -8
+     },
+     {
+      "row": 69,
+      "key": "rev_actual",
+      "offset": -8
+     },
+     {
+      "row": 70,
+      "key": "rev_surprise_pct",
+      "offset": -8
+     },
+     {
+      "row": 71,
+      "key": "ebitda_est",
+      "offset": -8
+     },
+     {
+      "row": 72,
+      "key": "ebitda_actual",
+      "offset": -8
+     },
+     {
+      "row": 73,
+      "key": "eps_est",
+      "offset": -8
+     },
+     {
+      "row": 74,
+      "key": "eps_actual",
+      "offset": -8
+     },
+     {
+      "row": 75,
+      "key": "eps_surprise_pct",
+      "offset": -8
+     },
+     {
+      "row": 76,
+      "key": "announce_date",
+      "offset": -7
+     },
+     {
+      "row": 77,
+      "key": "period_end",
+      "offset": -7
+     },
+     {
+      "row": 78,
+      "key": "fq_label",
+      "offset": -7
+     },
+     {
+      "row": 79,
+      "key": "rev_est",
+      "offset": -7
+     },
+     {
+      "row": 80,
+      "key": "rev_actual",
+      "offset": -7
+     },
+     {
+      "row": 81,
+      "key": "rev_surprise_pct",
+      "offset": -7
+     },
+     {
+      "row": 82,
+      "key": "ebitda_est",
+      "offset": -7
+     },
+     {
+      "row": 83,
+      "key": "ebitda_actual",
+      "offset": -7
+     },
+     {
+      "row": 84,
+      "key": "eps_est",
+      "offset": -7
+     },
+     {
+      "row": 85,
+      "key": "eps_actual",
+      "offset": -7
+     },
+     {
+      "row": 86,
+      "key": "eps_surprise_pct",
+      "offset": -7
+     },
+     {
+      "row": 87,
+      "key": "announce_date",
+      "offset": -6
+     },
+     {
+      "row": 88,
+      "key": "period_end",
+      "offset": -6
+     },
+     {
+      "row": 89,
+      "key": "fq_label",
+      "offset": -6
+     },
+     {
+      "row": 90,
+      "key": "rev_est",
+      "offset": -6
+     },
+     {
+      "row": 91,
+      "key": "rev_actual",
+      "offset": -6
+     },
+     {
+      "row": 92,
+      "key": "rev_surprise_pct",
+      "offset": -6
+     },
+     {
+      "row": 93,
+      "key": "ebitda_est",
+      "offset": -6
+     },
+     {
+      "row": 94,
+      "key": "ebitda_actual",
+      "offset": -6
+     },
+     {
+      "row": 95,
+      "key": "eps_est",
+      "offset": -6
+     },
+     {
+      "row": 96,
+      "key": "eps_actual",
+      "offset": -6
+     },
+     {
+      "row": 97,
+      "key": "eps_surprise_pct",
+      "offset": -6
+     },
+     {
+      "row": 98,
+      "key": "announce_date",
+      "offset": -5
+     },
+     {
+      "row": 99,
+      "key": "period_end",
+      "offset": -5
+     },
+     {
+      "row": 100,
+      "key": "fq_label",
+      "offset": -5
+     },
+     {
+      "row": 101,
+      "key": "rev_est",
+      "offset": -5
+     },
+     {
+      "row": 102,
+      "key": "rev_actual",
+      "offset": -5
+     },
+     {
+      "row": 103,
+      "key": "rev_surprise_pct",
+      "offset": -5
+     },
+     {
+      "row": 104,
+      "key": "ebitda_est",
+      "offset": -5
+     },
+     {
+      "row": 105,
+      "key": "ebitda_actual",
+      "offset": -5
+     },
+     {
+      "row": 106,
+      "key": "eps_est",
+      "offset": -5
+     },
+     {
+      "row": 107,
+      "key": "eps_actual",
+      "offset": -5
+     },
+     {
+      "row": 108,
+      "key": "eps_surprise_pct",
+      "offset": -5
+     },
+     {
+      "row": 109,
+      "key": "announce_date",
+      "offset": -4
+     },
+     {
+      "row": 110,
+      "key": "period_end",
+      "offset": -4
+     },
+     {
+      "row": 111,
+      "key": "fq_label",
+      "offset": -4
+     },
+     {
+      "row": 112,
+      "key": "rev_est",
+      "offset": -4
+     },
+     {
+      "row": 113,
+      "key": "rev_actual",
+      "offset": -4
+     },
+     {
+      "row": 114,
+      "key": "rev_surprise_pct",
+      "offset": -4
+     },
+     {
+      "row": 115,
+      "key": "ebitda_est",
+      "offset": -4
+     },
+     {
+      "row": 116,
+      "key": "ebitda_actual",
+      "offset": -4
+     },
+     {
+      "row": 117,
+      "key": "eps_est",
+      "offset": -4
+     },
+     {
+      "row": 118,
+      "key": "eps_actual",
+      "offset": -4
+     },
+     {
+      "row": 119,
+      "key": "eps_surprise_pct",
+      "offset": -4
+     },
+     {
+      "row": 120,
+      "key": "announce_date",
+      "offset": -3
+     },
+     {
+      "row": 121,
+      "key": "period_end",
+      "offset": -3
+     },
+     {
+      "row": 122,
+      "key": "fq_label",
+      "offset": -3
+     },
+     {
+      "row": 123,
+      "key": "rev_est",
+      "offset": -3
+     },
+     {
+      "row": 124,
+      "key": "rev_actual",
+      "offset": -3
+     },
+     {
+      "row": 125,
+      "key": "rev_surprise_pct",
+      "offset": -3
+     },
+     {
+      "row": 126,
+      "key": "ebitda_est",
+      "offset": -3
+     },
+     {
+      "row": 127,
+      "key": "ebitda_actual",
+      "offset": -3
+     },
+     {
+      "row": 128,
+      "key": "eps_est",
+      "offset": -3
+     },
+     {
+      "row": 129,
+      "key": "eps_actual",
+      "offset": -3
+     },
+     {
+      "row": 130,
+      "key": "eps_surprise_pct",
+      "offset": -3
+     },
+     {
+      "row": 131,
+      "key": "announce_date",
+      "offset": -2
+     },
+     {
+      "row": 132,
+      "key": "period_end",
+      "offset": -2
+     },
+     {
+      "row": 133,
+      "key": "fq_label",
+      "offset": -2
+     },
+     {
+      "row": 134,
+      "key": "rev_est",
+      "offset": -2
+     },
+     {
+      "row": 135,
+      "key": "rev_actual",
+      "offset": -2
+     },
+     {
+      "row": 136,
+      "key": "rev_surprise_pct",
+      "offset": -2
+     },
+     {
+      "row": 137,
+      "key": "ebitda_est",
+      "offset": -2
+     },
+     {
+      "row": 138,
+      "key": "ebitda_actual",
+      "offset": -2
+     },
+     {
+      "row": 139,
+      "key": "eps_est",
+      "offset": -2
+     },
+     {
+      "row": 140,
+      "key": "eps_actual",
+      "offset": -2
+     },
+     {
+      "row": 141,
+      "key": "eps_surprise_pct",
+      "offset": -2
+     },
+     {
+      "row": 142,
+      "key": "announce_date",
+      "offset": -1
+     },
+     {
+      "row": 143,
+      "key": "period_end",
+      "offset": -1
+     },
+     {
+      "row": 144,
+      "key": "fq_label",
+      "offset": -1
+     },
+     {
+      "row": 145,
+      "key": "rev_est",
+      "offset": -1
+     },
+     {
+      "row": 146,
+      "key": "rev_actual",
+      "offset": -1
+     },
+     {
+      "row": 147,
+      "key": "rev_surprise_pct",
+      "offset": -1
+     },
+     {
+      "row": 148,
+      "key": "ebitda_est",
+      "offset": -1
+     },
+     {
+      "row": 149,
+      "key": "ebitda_actual",
+      "offset": -1
+     },
+     {
+      "row": 150,
+      "key": "eps_est",
+      "offset": -1
+     },
+     {
+      "row": 151,
+      "key": "eps_actual",
+      "offset": -1
+     },
+     {
+      "row": 152,
+      "key": "eps_surprise_pct",
+      "offset": -1
+     },
+     {
+      "row": 153,
+      "key": "announce_date",
+      "offset": 0
+     },
+     {
+      "row": 154,
+      "key": "period_end",
+      "offset": 0
+     },
+     {
+      "row": 155,
+      "key": "fq_label",
+      "offset": 0
+     },
+     {
+      "row": 156,
+      "key": "rev_est",
+      "offset": 0
+     },
+     {
+      "row": 157,
+      "key": "rev_actual",
+      "offset": 0
+     },
+     {
+      "row": 158,
+      "key": "rev_surprise_pct",
+      "offset": 0
+     },
+     {
+      "row": 159,
+      "key": "ebitda_est",
+      "offset": 0
+     },
+     {
+      "row": 160,
+      "key": "ebitda_actual",
+      "offset": 0
+     },
+     {
+      "row": 161,
+      "key": "eps_est",
+      "offset": 0
+     },
+     {
+      "row": 162,
+      "key": "eps_actual",
+      "offset": 0
+     },
+     {
+      "row": 163,
+      "key": "eps_surprise_pct",
+      "offset": 0
+     }
+    ]
+   },
+   "RCL": {
+    "value_col": "L",
+    "rows": [
+     {
+      "row": 10,
+      "key": "announce_date",
+      "offset": -13
+     },
+     {
+      "row": 11,
+      "key": "period_end",
+      "offset": -13
+     },
+     {
+      "row": 12,
+      "key": "fq_label",
+      "offset": -13
+     },
+     {
+      "row": 13,
+      "key": "rev_est",
+      "offset": -13
+     },
+     {
+      "row": 14,
+      "key": "rev_actual",
+      "offset": -13
+     },
+     {
+      "row": 15,
+      "key": "rev_surprise_pct",
+      "offset": -13
+     },
+     {
+      "row": 16,
+      "key": "ebitda_est",
+      "offset": -13
+     },
+     {
+      "row": 17,
+      "key": "ebitda_actual",
+      "offset": -13
+     },
+     {
+      "row": 18,
+      "key": "eps_est",
+      "offset": -13
+     },
+     {
+      "row": 19,
+      "key": "eps_actual",
+      "offset": -13
+     },
+     {
+      "row": 20,
+      "key": "eps_surprise_pct",
+      "offset": -13
+     },
+     {
+      "row": 21,
+      "key": "announce_date",
+      "offset": -12
+     },
+     {
+      "row": 22,
+      "key": "period_end",
+      "offset": -12
+     },
+     {
+      "row": 23,
+      "key": "fq_label",
+      "offset": -12
+     },
+     {
+      "row": 24,
+      "key": "rev_est",
+      "offset": -12
+     },
+     {
+      "row": 25,
+      "key": "rev_actual",
+      "offset": -12
+     },
+     {
+      "row": 26,
+      "key": "rev_surprise_pct",
+      "offset": -12
+     },
+     {
+      "row": 27,
+      "key": "ebitda_est",
+      "offset": -12
+     },
+     {
+      "row": 28,
+      "key": "ebitda_actual",
+      "offset": -12
+     },
+     {
+      "row": 29,
+      "key": "eps_est",
+      "offset": -12
+     },
+     {
+      "row": 30,
+      "key": "eps_actual",
+      "offset": -12
+     },
+     {
+      "row": 31,
+      "key": "eps_surprise_pct",
+      "offset": -12
+     },
+     {
+      "row": 32,
+      "key": "announce_date",
+      "offset": -11
+     },
+     {
+      "row": 33,
+      "key": "period_end",
+      "offset": -11
+     },
+     {
+      "row": 34,
+      "key": "fq_label",
+      "offset": -11
+     },
+     {
+      "row": 35,
+      "key": "rev_est",
+      "offset": -11
+     },
+     {
+      "row": 36,
+      "key": "rev_actual",
+      "offset": -11
+     },
+     {
+      "row": 37,
+      "key": "rev_surprise_pct",
+      "offset": -11
+     },
+     {
+      "row": 38,
+      "key": "ebitda_est",
+      "offset": -11
+     },
+     {
+      "row": 39,
+      "key": "ebitda_actual",
+      "offset": -11
+     },
+     {
+      "row": 40,
+      "key": "eps_est",
+      "offset": -11
+     },
+     {
+      "row": 41,
+      "key": "eps_actual",
+      "offset": -11
+     },
+     {
+      "row": 42,
+      "key": "eps_surprise_pct",
+      "offset": -11
+     },
+     {
+      "row": 43,
+      "key": "announce_date",
+      "offset": -10
+     },
+     {
+      "row": 44,
+      "key": "period_end",
+      "offset": -10
+     },
+     {
+      "row": 45,
+      "key": "fq_label",
+      "offset": -10
+     },
+     {
+      "row": 46,
+      "key": "rev_est",
+      "offset": -10
+     },
+     {
+      "row": 47,
+      "key": "rev_actual",
+      "offset": -10
+     },
+     {
+      "row": 48,
+      "key": "rev_surprise_pct",
+      "offset": -10
+     },
+     {
+      "row": 49,
+      "key": "ebitda_est",
+      "offset": -10
+     },
+     {
+      "row": 50,
+      "key": "ebitda_actual",
+      "offset": -10
+     },
+     {
+      "row": 51,
+      "key": "eps_est",
+      "offset": -10
+     },
+     {
+      "row": 52,
+      "key": "eps_actual",
+      "offset": -10
+     },
+     {
+      "row": 53,
+      "key": "eps_surprise_pct",
+      "offset": -10
+     },
+     {
+      "row": 54,
+      "key": "announce_date",
+      "offset": -9
+     },
+     {
+      "row": 55,
+      "key": "period_end",
+      "offset": -9
+     },
+     {
+      "row": 56,
+      "key": "fq_label",
+      "offset": -9
+     },
+     {
+      "row": 57,
+      "key": "rev_est",
+      "offset": -9
+     },
+     {
+      "row": 58,
+      "key": "rev_actual",
+      "offset": -9
+     },
+     {
+      "row": 59,
+      "key": "rev_surprise_pct",
+      "offset": -9
+     },
+     {
+      "row": 60,
+      "key": "ebitda_est",
+      "offset": -9
+     },
+     {
+      "row": 61,
+      "key": "ebitda_actual",
+      "offset": -9
+     },
+     {
+      "row": 62,
+      "key": "eps_est",
+      "offset": -9
+     },
+     {
+      "row": 63,
+      "key": "eps_actual",
+      "offset": -9
+     },
+     {
+      "row": 64,
+      "key": "eps_surprise_pct",
+      "offset": -9
+     },
+     {
+      "row": 65,
+      "key": "announce_date",
+      "offset": -8
+     },
+     {
+      "row": 66,
+      "key": "period_end",
+      "offset": -8
+     },
+     {
+      "row": 67,
+      "key": "fq_label",
+      "offset": -8
+     },
+     {
+      "row": 68,
+      "key": "rev_est",
+      "offset": -8
+     },
+     {
+      "row": 69,
+      "key": "rev_actual",
+      "offset": -8
+     },
+     {
+      "row": 70,
+      "key": "rev_surprise_pct",
+      "offset": -8
+     },
+     {
+      "row": 71,
+      "key": "ebitda_est",
+      "offset": -8
+     },
+     {
+      "row": 72,
+      "key": "ebitda_actual",
+      "offset": -8
+     },
+     {
+      "row": 73,
+      "key": "eps_est",
+      "offset": -8
+     },
+     {
+      "row": 74,
+      "key": "eps_actual",
+      "offset": -8
+     },
+     {
+      "row": 75,
+      "key": "eps_surprise_pct",
+      "offset": -8
+     },
+     {
+      "row": 76,
+      "key": "announce_date",
+      "offset": -7
+     },
+     {
+      "row": 77,
+      "key": "period_end",
+      "offset": -7
+     },
+     {
+      "row": 78,
+      "key": "fq_label",
+      "offset": -7
+     },
+     {
+      "row": 79,
+      "key": "rev_est",
+      "offset": -7
+     },
+     {
+      "row": 80,
+      "key": "rev_actual",
+      "offset": -7
+     },
+     {
+      "row": 81,
+      "key": "rev_surprise_pct",
+      "offset": -7
+     },
+     {
+      "row": 82,
+      "key": "ebitda_est",
+      "offset": -7
+     },
+     {
+      "row": 83,
+      "key": "ebitda_actual",
+      "offset": -7
+     },
+     {
+      "row": 84,
+      "key": "eps_est",
+      "offset": -7
+     },
+     {
+      "row": 85,
+      "key": "eps_actual",
+      "offset": -7
+     },
+     {
+      "row": 86,
+      "key": "eps_surprise_pct",
+      "offset": -7
+     },
+     {
+      "row": 87,
+      "key": "announce_date",
+      "offset": -6
+     },
+     {
+      "row": 88,
+      "key": "period_end",
+      "offset": -6
+     },
+     {
+      "row": 89,
+      "key": "fq_label",
+      "offset": -6
+     },
+     {
+      "row": 90,
+      "key": "rev_est",
+      "offset": -6
+     },
+     {
+      "row": 91,
+      "key": "rev_actual",
+      "offset": -6
+     },
+     {
+      "row": 92,
+      "key": "rev_surprise_pct",
+      "offset": -6
+     },
+     {
+      "row": 93,
+      "key": "ebitda_est",
+      "offset": -6
+     },
+     {
+      "row": 94,
+      "key": "ebitda_actual",
+      "offset": -6
+     },
+     {
+      "row": 95,
+      "key": "eps_est",
+      "offset": -6
+     },
+     {
+      "row": 96,
+      "key": "eps_actual",
+      "offset": -6
+     },
+     {
+      "row": 97,
+      "key": "eps_surprise_pct",
+      "offset": -6
+     },
+     {
+      "row": 98,
+      "key": "announce_date",
+      "offset": -5
+     },
+     {
+      "row": 99,
+      "key": "period_end",
+      "offset": -5
+     },
+     {
+      "row": 100,
+      "key": "fq_label",
+      "offset": -5
+     },
+     {
+      "row": 101,
+      "key": "rev_est",
+      "offset": -5
+     },
+     {
+      "row": 102,
+      "key": "rev_actual",
+      "offset": -5
+     },
+     {
+      "row": 103,
+      "key": "rev_surprise_pct",
+      "offset": -5
+     },
+     {
+      "row": 104,
+      "key": "ebitda_est",
+      "offset": -5
+     },
+     {
+      "row": 105,
+      "key": "ebitda_actual",
+      "offset": -5
+     },
+     {
+      "row": 106,
+      "key": "eps_est",
+      "offset": -5
+     },
+     {
+      "row": 107,
+      "key": "eps_actual",
+      "offset": -5
+     },
+     {
+      "row": 108,
+      "key": "eps_surprise_pct",
+      "offset": -5
+     },
+     {
+      "row": 109,
+      "key": "announce_date",
+      "offset": -4
+     },
+     {
+      "row": 110,
+      "key": "period_end",
+      "offset": -4
+     },
+     {
+      "row": 111,
+      "key": "fq_label",
+      "offset": -4
+     },
+     {
+      "row": 112,
+      "key": "rev_est",
+      "offset": -4
+     },
+     {
+      "row": 113,
+      "key": "rev_actual",
+      "offset": -4
+     },
+     {
+      "row": 114,
+      "key": "rev_surprise_pct",
+      "offset": -4
+     },
+     {
+      "row": 115,
+      "key": "ebitda_est",
+      "offset": -4
+     },
+     {
+      "row": 116,
+      "key": "ebitda_actual",
+      "offset": -4
+     },
+     {
+      "row": 117,
+      "key": "eps_est",
+      "offset": -4
+     },
+     {
+      "row": 118,
+      "key": "eps_actual",
+      "offset": -4
+     },
+     {
+      "row": 119,
+      "key": "eps_surprise_pct",
+      "offset": -4
+     },
+     {
+      "row": 120,
+      "key": "announce_date",
+      "offset": -3
+     },
+     {
+      "row": 121,
+      "key": "period_end",
+      "offset": -3
+     },
+     {
+      "row": 122,
+      "key": "fq_label",
+      "offset": -3
+     },
+     {
+      "row": 123,
+      "key": "rev_est",
+      "offset": -3
+     },
+     {
+      "row": 124,
+      "key": "rev_actual",
+      "offset": -3
+     },
+     {
+      "row": 125,
+      "key": "rev_surprise_pct",
+      "offset": -3
+     },
+     {
+      "row": 126,
+      "key": "ebitda_est",
+      "offset": -3
+     },
+     {
+      "row": 127,
+      "key": "ebitda_actual",
+      "offset": -3
+     },
+     {
+      "row": 128,
+      "key": "eps_est",
+      "offset": -3
+     },
+     {
+      "row": 129,
+      "key": "eps_actual",
+      "offset": -3
+     },
+     {
+      "row": 130,
+      "key": "eps_surprise_pct",
+      "offset": -3
+     },
+     {
+      "row": 131,
+      "key": "announce_date",
+      "offset": -2
+     },
+     {
+      "row": 132,
+      "key": "period_end",
+      "offset": -2
+     },
+     {
+      "row": 133,
+      "key": "fq_label",
+      "offset": -2
+     },
+     {
+      "row": 134,
+      "key": "rev_est",
+      "offset": -2
+     },
+     {
+      "row": 135,
+      "key": "rev_actual",
+      "offset": -2
+     },
+     {
+      "row": 136,
+      "key": "rev_surprise_pct",
+      "offset": -2
+     },
+     {
+      "row": 137,
+      "key": "ebitda_est",
+      "offset": -2
+     },
+     {
+      "row": 138,
+      "key": "ebitda_actual",
+      "offset": -2
+     },
+     {
+      "row": 139,
+      "key": "eps_est",
+      "offset": -2
+     },
+     {
+      "row": 140,
+      "key": "eps_actual",
+      "offset": -2
+     },
+     {
+      "row": 141,
+      "key": "eps_surprise_pct",
+      "offset": -2
+     },
+     {
+      "row": 142,
+      "key": "announce_date",
+      "offset": -1
+     },
+     {
+      "row": 143,
+      "key": "period_end",
+      "offset": -1
+     },
+     {
+      "row": 144,
+      "key": "fq_label",
+      "offset": -1
+     },
+     {
+      "row": 145,
+      "key": "rev_est",
+      "offset": -1
+     },
+     {
+      "row": 146,
+      "key": "rev_actual",
+      "offset": -1
+     },
+     {
+      "row": 147,
+      "key": "rev_surprise_pct",
+      "offset": -1
+     },
+     {
+      "row": 148,
+      "key": "ebitda_est",
+      "offset": -1
+     },
+     {
+      "row": 149,
+      "key": "ebitda_actual",
+      "offset": -1
+     },
+     {
+      "row": 150,
+      "key": "eps_est",
+      "offset": -1
+     },
+     {
+      "row": 151,
+      "key": "eps_actual",
+      "offset": -1
+     },
+     {
+      "row": 152,
+      "key": "eps_surprise_pct",
+      "offset": -1
+     },
+     {
+      "row": 153,
+      "key": "announce_date",
+      "offset": 0
+     },
+     {
+      "row": 154,
+      "key": "period_end",
+      "offset": 0
+     },
+     {
+      "row": 155,
+      "key": "fq_label",
+      "offset": 0
+     },
+     {
+      "row": 156,
+      "key": "rev_est",
+      "offset": 0
+     },
+     {
+      "row": 157,
+      "key": "rev_actual",
+      "offset": 0
+     },
+     {
+      "row": 158,
+      "key": "rev_surprise_pct",
+      "offset": 0
+     },
+     {
+      "row": 159,
+      "key": "ebitda_est",
+      "offset": 0
+     },
+     {
+      "row": 160,
+      "key": "ebitda_actual",
+      "offset": 0
+     },
+     {
+      "row": 161,
+      "key": "eps_est",
+      "offset": 0
+     },
+     {
+      "row": 162,
+      "key": "eps_actual",
+      "offset": 0
+     },
+     {
+      "row": 163,
+      "key": "eps_surprise_pct",
+      "offset": 0
+     }
+    ]
+   },
+   "CCL": {
+    "value_col": "R",
+    "rows": [
+     {
+      "row": 10,
+      "key": "announce_date",
+      "offset": -13
+     },
+     {
+      "row": 11,
+      "key": "period_end",
+      "offset": -13
+     },
+     {
+      "row": 12,
+      "key": "fq_label",
+      "offset": -13
+     },
+     {
+      "row": 13,
+      "key": "rev_est",
+      "offset": -13
+     },
+     {
+      "row": 14,
+      "key": "rev_actual",
+      "offset": -13
+     },
+     {
+      "row": 15,
+      "key": "rev_surprise_pct",
+      "offset": -13
+     },
+     {
+      "row": 16,
+      "key": "ebitda_est",
+      "offset": -13
+     },
+     {
+      "row": 17,
+      "key": "ebitda_actual",
+      "offset": -13
+     },
+     {
+      "row": 18,
+      "key": "eps_est",
+      "offset": -13
+     },
+     {
+      "row": 19,
+      "key": "eps_actual",
+      "offset": -13
+     },
+     {
+      "row": 20,
+      "key": "eps_surprise_pct",
+      "offset": -13
+     },
+     {
+      "row": 21,
+      "key": "announce_date",
+      "offset": -12
+     },
+     {
+      "row": 22,
+      "key": "period_end",
+      "offset": -12
+     },
+     {
+      "row": 23,
+      "key": "fq_label",
+      "offset": -12
+     },
+     {
+      "row": 24,
+      "key": "rev_est",
+      "offset": -12
+     },
+     {
+      "row": 25,
+      "key": "rev_actual",
+      "offset": -12
+     },
+     {
+      "row": 26,
+      "key": "rev_surprise_pct",
+      "offset": -12
+     },
+     {
+      "row": 27,
+      "key": "ebitda_est",
+      "offset": -12
+     },
+     {
+      "row": 28,
+      "key": "ebitda_actual",
+      "offset": -12
+     },
+     {
+      "row": 29,
+      "key": "eps_est",
+      "offset": -12
+     },
+     {
+      "row": 30,
+      "key": "eps_actual",
+      "offset": -12
+     },
+     {
+      "row": 31,
+      "key": "eps_surprise_pct",
+      "offset": -12
+     },
+     {
+      "row": 32,
+      "key": "announce_date",
+      "offset": -11
+     },
+     {
+      "row": 33,
+      "key": "period_end",
+      "offset": -11
+     },
+     {
+      "row": 34,
+      "key": "fq_label",
+      "offset": -11
+     },
+     {
+      "row": 35,
+      "key": "rev_est",
+      "offset": -11
+     },
+     {
+      "row": 36,
+      "key": "rev_actual",
+      "offset": -11
+     },
+     {
+      "row": 37,
+      "key": "rev_surprise_pct",
+      "offset": -11
+     },
+     {
+      "row": 38,
+      "key": "ebitda_est",
+      "offset": -11
+     },
+     {
+      "row": 39,
+      "key": "ebitda_actual",
+      "offset": -11
+     },
+     {
+      "row": 40,
+      "key": "eps_est",
+      "offset": -11
+     },
+     {
+      "row": 41,
+      "key": "eps_actual",
+      "offset": -11
+     },
+     {
+      "row": 42,
+      "key": "eps_surprise_pct",
+      "offset": -11
+     },
+     {
+      "row": 43,
+      "key": "announce_date",
+      "offset": -10
+     },
+     {
+      "row": 44,
+      "key": "period_end",
+      "offset": -10
+     },
+     {
+      "row": 45,
+      "key": "fq_label",
+      "offset": -10
+     },
+     {
+      "row": 46,
+      "key": "rev_est",
+      "offset": -10
+     },
+     {
+      "row": 47,
+      "key": "rev_actual",
+      "offset": -10
+     },
+     {
+      "row": 48,
+      "key": "rev_surprise_pct",
+      "offset": -10
+     },
+     {
+      "row": 49,
+      "key": "ebitda_est",
+      "offset": -10
+     },
+     {
+      "row": 50,
+      "key": "ebitda_actual",
+      "offset": -10
+     },
+     {
+      "row": 51,
+      "key": "eps_est",
+      "offset": -10
+     },
+     {
+      "row": 52,
+      "key": "eps_actual",
+      "offset": -10
+     },
+     {
+      "row": 53,
+      "key": "eps_surprise_pct",
+      "offset": -10
+     },
+     {
+      "row": 54,
+      "key": "announce_date",
+      "offset": -9
+     },
+     {
+      "row": 55,
+      "key": "period_end",
+      "offset": -9
+     },
+     {
+      "row": 56,
+      "key": "fq_label",
+      "offset": -9
+     },
+     {
+      "row": 57,
+      "key": "rev_est",
+      "offset": -9
+     },
+     {
+      "row": 58,
+      "key": "rev_actual",
+      "offset": -9
+     },
+     {
+      "row": 59,
+      "key": "rev_surprise_pct",
+      "offset": -9
+     },
+     {
+      "row": 60,
+      "key": "ebitda_est",
+      "offset": -9
+     },
+     {
+      "row": 61,
+      "key": "ebitda_actual",
+      "offset": -9
+     },
+     {
+      "row": 62,
+      "key": "eps_est",
+      "offset": -9
+     },
+     {
+      "row": 63,
+      "key": "eps_actual",
+      "offset": -9
+     },
+     {
+      "row": 64,
+      "key": "eps_surprise_pct",
+      "offset": -9
+     },
+     {
+      "row": 65,
+      "key": "announce_date",
+      "offset": -8
+     },
+     {
+      "row": 66,
+      "key": "period_end",
+      "offset": -8
+     },
+     {
+      "row": 67,
+      "key": "fq_label",
+      "offset": -8
+     },
+     {
+      "row": 68,
+      "key": "rev_est",
+      "offset": -8
+     },
+     {
+      "row": 69,
+      "key": "rev_actual",
+      "offset": -8
+     },
+     {
+      "row": 70,
+      "key": "rev_surprise_pct",
+      "offset": -8
+     },
+     {
+      "row": 71,
+      "key": "ebitda_est",
+      "offset": -8
+     },
+     {
+      "row": 72,
+      "key": "ebitda_actual",
+      "offset": -8
+     },
+     {
+      "row": 73,
+      "key": "eps_est",
+      "offset": -8
+     },
+     {
+      "row": 74,
+      "key": "eps_actual",
+      "offset": -8
+     },
+     {
+      "row": 75,
+      "key": "eps_surprise_pct",
+      "offset": -8
+     },
+     {
+      "row": 76,
+      "key": "announce_date",
+      "offset": -7
+     },
+     {
+      "row": 77,
+      "key": "period_end",
+      "offset": -7
+     },
+     {
+      "row": 78,
+      "key": "fq_label",
+      "offset": -7
+     },
+     {
+      "row": 79,
+      "key": "rev_est",
+      "offset": -7
+     },
+     {
+      "row": 80,
+      "key": "rev_actual",
+      "offset": -7
+     },
+     {
+      "row": 81,
+      "key": "rev_surprise_pct",
+      "offset": -7
+     },
+     {
+      "row": 82,
+      "key": "ebitda_est",
+      "offset": -7
+     },
+     {
+      "row": 83,
+      "key": "ebitda_actual",
+      "offset": -7
+     },
+     {
+      "row": 84,
+      "key": "eps_est",
+      "offset": -7
+     },
+     {
+      "row": 85,
+      "key": "eps_actual",
+      "offset": -7
+     },
+     {
+      "row": 86,
+      "key": "eps_surprise_pct",
+      "offset": -7
+     },
+     {
+      "row": 87,
+      "key": "announce_date",
+      "offset": -6
+     },
+     {
+      "row": 88,
+      "key": "period_end",
+      "offset": -6
+     },
+     {
+      "row": 89,
+      "key": "fq_label",
+      "offset": -6
+     },
+     {
+      "row": 90,
+      "key": "rev_est",
+      "offset": -6
+     },
+     {
+      "row": 91,
+      "key": "rev_actual",
+      "offset": -6
+     },
+     {
+      "row": 92,
+      "key": "rev_surprise_pct",
+      "offset": -6
+     },
+     {
+      "row": 93,
+      "key": "ebitda_est",
+      "offset": -6
+     },
+     {
+      "row": 94,
+      "key": "ebitda_actual",
+      "offset": -6
+     },
+     {
+      "row": 95,
+      "key": "eps_est",
+      "offset": -6
+     },
+     {
+      "row": 96,
+      "key": "eps_actual",
+      "offset": -6
+     },
+     {
+      "row": 97,
+      "key": "eps_surprise_pct",
+      "offset": -6
+     },
+     {
+      "row": 98,
+      "key": "announce_date",
+      "offset": -5
+     },
+     {
+      "row": 99,
+      "key": "period_end",
+      "offset": -5
+     },
+     {
+      "row": 100,
+      "key": "fq_label",
+      "offset": -5
+     },
+     {
+      "row": 101,
+      "key": "rev_est",
+      "offset": -5
+     },
+     {
+      "row": 102,
+      "key": "rev_actual",
+      "offset": -5
+     },
+     {
+      "row": 103,
+      "key": "rev_surprise_pct",
+      "offset": -5
+     },
+     {
+      "row": 104,
+      "key": "ebitda_est",
+      "offset": -5
+     },
+     {
+      "row": 105,
+      "key": "ebitda_actual",
+      "offset": -5
+     },
+     {
+      "row": 106,
+      "key": "eps_est",
+      "offset": -5
+     },
+     {
+      "row": 107,
+      "key": "eps_actual",
+      "offset": -5
+     },
+     {
+      "row": 108,
+      "key": "eps_surprise_pct",
+      "offset": -5
+     },
+     {
+      "row": 109,
+      "key": "announce_date",
+      "offset": -4
+     },
+     {
+      "row": 110,
+      "key": "period_end",
+      "offset": -4
+     },
+     {
+      "row": 111,
+      "key": "fq_label",
+      "offset": -4
+     },
+     {
+      "row": 112,
+      "key": "rev_est",
+      "offset": -4
+     },
+     {
+      "row": 113,
+      "key": "rev_actual",
+      "offset": -4
+     },
+     {
+      "row": 114,
+      "key": "rev_surprise_pct",
+      "offset": -4
+     },
+     {
+      "row": 115,
+      "key": "ebitda_est",
+      "offset": -4
+     },
+     {
+      "row": 116,
+      "key": "ebitda_actual",
+      "offset": -4
+     },
+     {
+      "row": 117,
+      "key": "eps_est",
+      "offset": -4
+     },
+     {
+      "row": 118,
+      "key": "eps_actual",
+      "offset": -4
+     },
+     {
+      "row": 119,
+      "key": "eps_surprise_pct",
+      "offset": -4
+     },
+     {
+      "row": 120,
+      "key": "announce_date",
+      "offset": -3
+     },
+     {
+      "row": 121,
+      "key": "period_end",
+      "offset": -3
+     },
+     {
+      "row": 122,
+      "key": "fq_label",
+      "offset": -3
+     },
+     {
+      "row": 123,
+      "key": "rev_est",
+      "offset": -3
+     },
+     {
+      "row": 124,
+      "key": "rev_actual",
+      "offset": -3
+     },
+     {
+      "row": 125,
+      "key": "rev_surprise_pct",
+      "offset": -3
+     },
+     {
+      "row": 126,
+      "key": "ebitda_est",
+      "offset": -3
+     },
+     {
+      "row": 127,
+      "key": "ebitda_actual",
+      "offset": -3
+     },
+     {
+      "row": 128,
+      "key": "eps_est",
+      "offset": -3
+     },
+     {
+      "row": 129,
+      "key": "eps_actual",
+      "offset": -3
+     },
+     {
+      "row": 130,
+      "key": "eps_surprise_pct",
+      "offset": -3
+     },
+     {
+      "row": 131,
+      "key": "announce_date",
+      "offset": -2
+     },
+     {
+      "row": 132,
+      "key": "period_end",
+      "offset": -2
+     },
+     {
+      "row": 133,
+      "key": "fq_label",
+      "offset": -2
+     },
+     {
+      "row": 134,
+      "key": "rev_est",
+      "offset": -2
+     },
+     {
+      "row": 135,
+      "key": "rev_actual",
+      "offset": -2
+     },
+     {
+      "row": 136,
+      "key": "rev_surprise_pct",
+      "offset": -2
+     },
+     {
+      "row": 137,
+      "key": "ebitda_est",
+      "offset": -2
+     },
+     {
+      "row": 138,
+      "key": "ebitda_actual",
+      "offset": -2
+     },
+     {
+      "row": 139,
+      "key": "eps_est",
+      "offset": -2
+     },
+     {
+      "row": 140,
+      "key": "eps_actual",
+      "offset": -2
+     },
+     {
+      "row": 141,
+      "key": "eps_surprise_pct",
+      "offset": -2
+     },
+     {
+      "row": 142,
+      "key": "announce_date",
+      "offset": -1
+     },
+     {
+      "row": 143,
+      "key": "period_end",
+      "offset": -1
+     },
+     {
+      "row": 144,
+      "key": "fq_label",
+      "offset": -1
+     },
+     {
+      "row": 145,
+      "key": "rev_est",
+      "offset": -1
+     },
+     {
+      "row": 146,
+      "key": "rev_actual",
+      "offset": -1
+     },
+     {
+      "row": 147,
+      "key": "rev_surprise_pct",
+      "offset": -1
+     },
+     {
+      "row": 148,
+      "key": "ebitda_est",
+      "offset": -1
+     },
+     {
+      "row": 149,
+      "key": "ebitda_actual",
+      "offset": -1
+     },
+     {
+      "row": 150,
+      "key": "eps_est",
+      "offset": -1
+     },
+     {
+      "row": 151,
+      "key": "eps_actual",
+      "offset": -1
+     },
+     {
+      "row": 152,
+      "key": "eps_surprise_pct",
+      "offset": -1
+     },
+     {
+      "row": 153,
+      "key": "announce_date",
+      "offset": 0
+     },
+     {
+      "row": 154,
+      "key": "period_end",
+      "offset": 0
+     },
+     {
+      "row": 155,
+      "key": "fq_label",
+      "offset": 0
+     },
+     {
+      "row": 156,
+      "key": "rev_est",
+      "offset": 0
+     },
+     {
+      "row": 157,
+      "key": "rev_actual",
+      "offset": 0
+     },
+     {
+      "row": 158,
+      "key": "rev_surprise_pct",
+      "offset": 0
+     },
+     {
+      "row": 159,
+      "key": "ebitda_est",
+      "offset": 0
+     },
+     {
+      "row": 160,
+      "key": "ebitda_actual",
+      "offset": 0
+     },
+     {
+      "row": 161,
+      "key": "eps_est",
+      "offset": 0
+     },
+     {
+      "row": 162,
+      "key": "eps_actual",
+      "offset": 0
+     },
+     {
+      "row": 163,
+      "key": "eps_surprise_pct",
+      "offset": 0
+     }
+    ]
+   },
+   "NCLH": {
+    "value_col": "X",
+    "rows": [
+     {
+      "row": 10,
+      "key": "announce_date",
+      "offset": -13
+     },
+     {
+      "row": 11,
+      "key": "period_end",
+      "offset": -13
+     },
+     {
+      "row": 12,
+      "key": "fq_label",
+      "offset": -13
+     },
+     {
+      "row": 13,
+      "key": "rev_est",
+      "offset": -13
+     },
+     {
+      "row": 14,
+      "key": "rev_actual",
+      "offset": -13
+     },
+     {
+      "row": 15,
+      "key": "rev_surprise_pct",
+      "offset": -13
+     },
+     {
+      "row": 16,
+      "key": "ebitda_est",
+      "offset": -13
+     },
+     {
+      "row": 17,
+      "key": "ebitda_actual",
+      "offset": -13
+     },
+     {
+      "row": 18,
+      "key": "eps_est",
+      "offset": -13
+     },
+     {
+      "row": 19,
+      "key": "eps_actual",
+      "offset": -13
+     },
+     {
+      "row": 20,
+      "key": "eps_surprise_pct",
+      "offset": -13
+     },
+     {
+      "row": 21,
+      "key": "announce_date",
+      "offset": -12
+     },
+     {
+      "row": 22,
+      "key": "period_end",
+      "offset": -12
+     },
+     {
+      "row": 23,
+      "key": "fq_label",
+      "offset": -12
+     },
+     {
+      "row": 24,
+      "key": "rev_est",
+      "offset": -12
+     },
+     {
+      "row": 25,
+      "key": "rev_actual",
+      "offset": -12
+     },
+     {
+      "row": 26,
+      "key": "rev_surprise_pct",
+      "offset": -12
+     },
+     {
+      "row": 27,
+      "key": "ebitda_est",
+      "offset": -12
+     },
+     {
+      "row": 28,
+      "key": "ebitda_actual",
+      "offset": -12
+     },
+     {
+      "row": 29,
+      "key": "eps_est",
+      "offset": -12
+     },
+     {
+      "row": 30,
+      "key": "eps_actual",
+      "offset": -12
+     },
+     {
+      "row": 31,
+      "key": "eps_surprise_pct",
+      "offset": -12
+     },
+     {
+      "row": 32,
+      "key": "announce_date",
+      "offset": -11
+     },
+     {
+      "row": 33,
+      "key": "period_end",
+      "offset": -11
+     },
+     {
+      "row": 34,
+      "key": "fq_label",
+      "offset": -11
+     },
+     {
+      "row": 35,
+      "key": "rev_est",
+      "offset": -11
+     },
+     {
+      "row": 36,
+      "key": "rev_actual",
+      "offset": -11
+     },
+     {
+      "row": 37,
+      "key": "rev_surprise_pct",
+      "offset": -11
+     },
+     {
+      "row": 38,
+      "key": "ebitda_est",
+      "offset": -11
+     },
+     {
+      "row": 39,
+      "key": "ebitda_actual",
+      "offset": -11
+     },
+     {
+      "row": 40,
+      "key": "eps_est",
+      "offset": -11
+     },
+     {
+      "row": 41,
+      "key": "eps_actual",
+      "offset": -11
+     },
+     {
+      "row": 42,
+      "key": "eps_surprise_pct",
+      "offset": -11
+     },
+     {
+      "row": 43,
+      "key": "announce_date",
+      "offset": -10
+     },
+     {
+      "row": 44,
+      "key": "period_end",
+      "offset": -10
+     },
+     {
+      "row": 45,
+      "key": "fq_label",
+      "offset": -10
+     },
+     {
+      "row": 46,
+      "key": "rev_est",
+      "offset": -10
+     },
+     {
+      "row": 47,
+      "key": "rev_actual",
+      "offset": -10
+     },
+     {
+      "row": 48,
+      "key": "rev_surprise_pct",
+      "offset": -10
+     },
+     {
+      "row": 49,
+      "key": "ebitda_est",
+      "offset": -10
+     },
+     {
+      "row": 50,
+      "key": "ebitda_actual",
+      "offset": -10
+     },
+     {
+      "row": 51,
+      "key": "eps_est",
+      "offset": -10
+     },
+     {
+      "row": 52,
+      "key": "eps_actual",
+      "offset": -10
+     },
+     {
+      "row": 53,
+      "key": "eps_surprise_pct",
+      "offset": -10
+     },
+     {
+      "row": 54,
+      "key": "announce_date",
+      "offset": -9
+     },
+     {
+      "row": 55,
+      "key": "period_end",
+      "offset": -9
+     },
+     {
+      "row": 56,
+      "key": "fq_label",
+      "offset": -9
+     },
+     {
+      "row": 57,
+      "key": "rev_est",
+      "offset": -9
+     },
+     {
+      "row": 58,
+      "key": "rev_actual",
+      "offset": -9
+     },
+     {
+      "row": 59,
+      "key": "rev_surprise_pct",
+      "offset": -9
+     },
+     {
+      "row": 60,
+      "key": "ebitda_est",
+      "offset": -9
+     },
+     {
+      "row": 61,
+      "key": "ebitda_actual",
+      "offset": -9
+     },
+     {
+      "row": 62,
+      "key": "eps_est",
+      "offset": -9
+     },
+     {
+      "row": 63,
+      "key": "eps_actual",
+      "offset": -9
+     },
+     {
+      "row": 64,
+      "key": "eps_surprise_pct",
+      "offset": -9
+     },
+     {
+      "row": 65,
+      "key": "announce_date",
+      "offset": -8
+     },
+     {
+      "row": 66,
+      "key": "period_end",
+      "offset": -8
+     },
+     {
+      "row": 67,
+      "key": "fq_label",
+      "offset": -8
+     },
+     {
+      "row": 68,
+      "key": "rev_est",
+      "offset": -8
+     },
+     {
+      "row": 69,
+      "key": "rev_actual",
+      "offset": -8
+     },
+     {
+      "row": 70,
+      "key": "rev_surprise_pct",
+      "offset": -8
+     },
+     {
+      "row": 71,
+      "key": "ebitda_est",
+      "offset": -8
+     },
+     {
+      "row": 72,
+      "key": "ebitda_actual",
+      "offset": -8
+     },
+     {
+      "row": 73,
+      "key": "eps_est",
+      "offset": -8
+     },
+     {
+      "row": 74,
+      "key": "eps_actual",
+      "offset": -8
+     },
+     {
+      "row": 75,
+      "key": "eps_surprise_pct",
+      "offset": -8
+     },
+     {
+      "row": 76,
+      "key": "announce_date",
+      "offset": -7
+     },
+     {
+      "row": 77,
+      "key": "period_end",
+      "offset": -7
+     },
+     {
+      "row": 78,
+      "key": "fq_label",
+      "offset": -7
+     },
+     {
+      "row": 79,
+      "key": "rev_est",
+      "offset": -7
+     },
+     {
+      "row": 80,
+      "key": "rev_actual",
+      "offset": -7
+     },
+     {
+      "row": 81,
+      "key": "rev_surprise_pct",
+      "offset": -7
+     },
+     {
+      "row": 82,
+      "key": "ebitda_est",
+      "offset": -7
+     },
+     {
+      "row": 83,
+      "key": "ebitda_actual",
+      "offset": -7
+     },
+     {
+      "row": 84,
+      "key": "eps_est",
+      "offset": -7
+     },
+     {
+      "row": 85,
+      "key": "eps_actual",
+      "offset": -7
+     },
+     {
+      "row": 86,
+      "key": "eps_surprise_pct",
+      "offset": -7
+     },
+     {
+      "row": 87,
+      "key": "announce_date",
+      "offset": -6
+     },
+     {
+      "row": 88,
+      "key": "period_end",
+      "offset": -6
+     },
+     {
+      "row": 89,
+      "key": "fq_label",
+      "offset": -6
+     },
+     {
+      "row": 90,
+      "key": "rev_est",
+      "offset": -6
+     },
+     {
+      "row": 91,
+      "key": "rev_actual",
+      "offset": -6
+     },
+     {
+      "row": 92,
+      "key": "rev_surprise_pct",
+      "offset": -6
+     },
+     {
+      "row": 93,
+      "key": "ebitda_est",
+      "offset": -6
+     },
+     {
+      "row": 94,
+      "key": "ebitda_actual",
+      "offset": -6
+     },
+     {
+      "row": 95,
+      "key": "eps_est",
+      "offset": -6
+     },
+     {
+      "row": 96,
+      "key": "eps_actual",
+      "offset": -6
+     },
+     {
+      "row": 97,
+      "key": "eps_surprise_pct",
+      "offset": -6
+     },
+     {
+      "row": 98,
+      "key": "announce_date",
+      "offset": -5
+     },
+     {
+      "row": 99,
+      "key": "period_end",
+      "offset": -5
+     },
+     {
+      "row": 100,
+      "key": "fq_label",
+      "offset": -5
+     },
+     {
+      "row": 101,
+      "key": "rev_est",
+      "offset": -5
+     },
+     {
+      "row": 102,
+      "key": "rev_actual",
+      "offset": -5
+     },
+     {
+      "row": 103,
+      "key": "rev_surprise_pct",
+      "offset": -5
+     },
+     {
+      "row": 104,
+      "key": "ebitda_est",
+      "offset": -5
+     },
+     {
+      "row": 105,
+      "key": "ebitda_actual",
+      "offset": -5
+     },
+     {
+      "row": 106,
+      "key": "eps_est",
+      "offset": -5
+     },
+     {
+      "row": 107,
+      "key": "eps_actual",
+      "offset": -5
+     },
+     {
+      "row": 108,
+      "key": "eps_surprise_pct",
+      "offset": -5
+     },
+     {
+      "row": 109,
+      "key": "announce_date",
+      "offset": -4
+     },
+     {
+      "row": 110,
+      "key": "period_end",
+      "offset": -4
+     },
+     {
+      "row": 111,
+      "key": "fq_label",
+      "offset": -4
+     },
+     {
+      "row": 112,
+      "key": "rev_est",
+      "offset": -4
+     },
+     {
+      "row": 113,
+      "key": "rev_actual",
+      "offset": -4
+     },
+     {
+      "row": 114,
+      "key": "rev_surprise_pct",
+      "offset": -4
+     },
+     {
+      "row": 115,
+      "key": "ebitda_est",
+      "offset": -4
+     },
+     {
+      "row": 116,
+      "key": "ebitda_actual",
+      "offset": -4
+     },
+     {
+      "row": 117,
+      "key": "eps_est",
+      "offset": -4
+     },
+     {
+      "row": 118,
+      "key": "eps_actual",
+      "offset": -4
+     },
+     {
+      "row": 119,
+      "key": "eps_surprise_pct",
+      "offset": -4
+     },
+     {
+      "row": 120,
+      "key": "announce_date",
+      "offset": -3
+     },
+     {
+      "row": 121,
+      "key": "period_end",
+      "offset": -3
+     },
+     {
+      "row": 122,
+      "key": "fq_label",
+      "offset": -3
+     },
+     {
+      "row": 123,
+      "key": "rev_est",
+      "offset": -3
+     },
+     {
+      "row": 124,
+      "key": "rev_actual",
+      "offset": -3
+     },
+     {
+      "row": 125,
+      "key": "rev_surprise_pct",
+      "offset": -3
+     },
+     {
+      "row": 126,
+      "key": "ebitda_est",
+      "offset": -3
+     },
+     {
+      "row": 127,
+      "key": "ebitda_actual",
+      "offset": -3
+     },
+     {
+      "row": 128,
+      "key": "eps_est",
+      "offset": -3
+     },
+     {
+      "row": 129,
+      "key": "eps_actual",
+      "offset": -3
+     },
+     {
+      "row": 130,
+      "key": "eps_surprise_pct",
+      "offset": -3
+     },
+     {
+      "row": 131,
+      "key": "announce_date",
+      "offset": -2
+     },
+     {
+      "row": 132,
+      "key": "period_end",
+      "offset": -2
+     },
+     {
+      "row": 133,
+      "key": "fq_label",
+      "offset": -2
+     },
+     {
+      "row": 134,
+      "key": "rev_est",
+      "offset": -2
+     },
+     {
+      "row": 135,
+      "key": "rev_actual",
+      "offset": -2
+     },
+     {
+      "row": 136,
+      "key": "rev_surprise_pct",
+      "offset": -2
+     },
+     {
+      "row": 137,
+      "key": "ebitda_est",
+      "offset": -2
+     },
+     {
+      "row": 138,
+      "key": "ebitda_actual",
+      "offset": -2
+     },
+     {
+      "row": 139,
+      "key": "eps_est",
+      "offset": -2
+     },
+     {
+      "row": 140,
+      "key": "eps_actual",
+      "offset": -2
+     },
+     {
+      "row": 141,
+      "key": "eps_surprise_pct",
+      "offset": -2
+     },
+     {
+      "row": 142,
+      "key": "announce_date",
+      "offset": -1
+     },
+     {
+      "row": 143,
+      "key": "period_end",
+      "offset": -1
+     },
+     {
+      "row": 144,
+      "key": "fq_label",
+      "offset": -1
+     },
+     {
+      "row": 145,
+      "key": "rev_est",
+      "offset": -1
+     },
+     {
+      "row": 146,
+      "key": "rev_actual",
+      "offset": -1
+     },
+     {
+      "row": 147,
+      "key": "rev_surprise_pct",
+      "offset": -1
+     },
+     {
+      "row": 148,
+      "key": "ebitda_est",
+      "offset": -1
+     },
+     {
+      "row": 149,
+      "key": "ebitda_actual",
+      "offset": -1
+     },
+     {
+      "row": 150,
+      "key": "eps_est",
+      "offset": -1
+     },
+     {
+      "row": 151,
+      "key": "eps_actual",
+      "offset": -1
+     },
+     {
+      "row": 152,
+      "key": "eps_surprise_pct",
+      "offset": -1
+     },
+     {
+      "row": 153,
+      "key": "announce_date",
+      "offset": 0
+     },
+     {
+      "row": 154,
+      "key": "period_end",
+      "offset": 0
+     },
+     {
+      "row": 155,
+      "key": "fq_label",
+      "offset": 0
+     },
+     {
+      "row": 156,
+      "key": "rev_est",
+      "offset": 0
+     },
+     {
+      "row": 157,
+      "key": "rev_actual",
+      "offset": 0
+     },
+     {
+      "row": 158,
+      "key": "rev_surprise_pct",
+      "offset": 0
+     },
+     {
+      "row": 159,
+      "key": "ebitda_est",
+      "offset": 0
+     },
+     {
+      "row": 160,
+      "key": "ebitda_actual",
+      "offset": 0
+     },
+     {
+      "row": 161,
+      "key": "eps_est",
+      "offset": 0
+     },
+     {
+      "row": 162,
+      "key": "eps_actual",
+      "offset": 0
+     },
+     {
+      "row": 163,
+      "key": "eps_surprise_pct",
+      "offset": 0
+     }
+    ]
+   },
+   "VIK": {
+    "value_col": "AD",
+    "rows": [
+     {
+      "row": 10,
+      "key": "announce_date",
+      "offset": -13
+     },
+     {
+      "row": 11,
+      "key": "period_end",
+      "offset": -13
+     },
+     {
+      "row": 12,
+      "key": "fq_label",
+      "offset": -13
+     },
+     {
+      "row": 13,
+      "key": "rev_est",
+      "offset": -13
+     },
+     {
+      "row": 14,
+      "key": "rev_actual",
+      "offset": -13
+     },
+     {
+      "row": 15,
+      "key": "rev_surprise_pct",
+      "offset": -13
+     },
+     {
+      "row": 16,
+      "key": "ebitda_est",
+      "offset": -13
+     },
+     {
+      "row": 17,
+      "key": "ebitda_actual",
+      "offset": -13
+     },
+     {
+      "row": 18,
+      "key": "eps_est",
+      "offset": -13
+     },
+     {
+      "row": 19,
+      "key": "eps_actual",
+      "offset": -13
+     },
+     {
+      "row": 20,
+      "key": "eps_surprise_pct",
+      "offset": -13
+     },
+     {
+      "row": 21,
+      "key": "announce_date",
+      "offset": -12
+     },
+     {
+      "row": 22,
+      "key": "period_end",
+      "offset": -12
+     },
+     {
+      "row": 23,
+      "key": "fq_label",
+      "offset": -12
+     },
+     {
+      "row": 24,
+      "key": "rev_est",
+      "offset": -12
+     },
+     {
+      "row": 25,
+      "key": "rev_actual",
+      "offset": -12
+     },
+     {
+      "row": 26,
+      "key": "rev_surprise_pct",
+      "offset": -12
+     },
+     {
+      "row": 27,
+      "key": "ebitda_est",
+      "offset": -12
+     },
+     {
+      "row": 28,
+      "key": "ebitda_actual",
+      "offset": -12
+     },
+     {
+      "row": 29,
+      "key": "eps_est",
+      "offset": -12
+     },
+     {
+      "row": 30,
+      "key": "eps_actual",
+      "offset": -12
+     },
+     {
+      "row": 31,
+      "key": "eps_surprise_pct",
+      "offset": -12
+     },
+     {
+      "row": 32,
+      "key": "announce_date",
+      "offset": -11
+     },
+     {
+      "row": 33,
+      "key": "period_end",
+      "offset": -11
+     },
+     {
+      "row": 34,
+      "key": "fq_label",
+      "offset": -11
+     },
+     {
+      "row": 35,
+      "key": "rev_est",
+      "offset": -11
+     },
+     {
+      "row": 36,
+      "key": "rev_actual",
+      "offset": -11
+     },
+     {
+      "row": 37,
+      "key": "rev_surprise_pct",
+      "offset": -11
+     },
+     {
+      "row": 38,
+      "key": "ebitda_est",
+      "offset": -11
+     },
+     {
+      "row": 39,
+      "key": "ebitda_actual",
+      "offset": -11
+     },
+     {
+      "row": 40,
+      "key": "eps_est",
+      "offset": -11
+     },
+     {
+      "row": 41,
+      "key": "eps_actual",
+      "offset": -11
+     },
+     {
+      "row": 42,
+      "key": "eps_surprise_pct",
+      "offset": -11
+     },
+     {
+      "row": 43,
+      "key": "announce_date",
+      "offset": -10
+     },
+     {
+      "row": 44,
+      "key": "period_end",
+      "offset": -10
+     },
+     {
+      "row": 45,
+      "key": "fq_label",
+      "offset": -10
+     },
+     {
+      "row": 46,
+      "key": "rev_est",
+      "offset": -10
+     },
+     {
+      "row": 47,
+      "key": "rev_actual",
+      "offset": -10
+     },
+     {
+      "row": 48,
+      "key": "rev_surprise_pct",
+      "offset": -10
+     },
+     {
+      "row": 49,
+      "key": "ebitda_est",
+      "offset": -10
+     },
+     {
+      "row": 50,
+      "key": "ebitda_actual",
+      "offset": -10
+     },
+     {
+      "row": 51,
+      "key": "eps_est",
+      "offset": -10
+     },
+     {
+      "row": 52,
+      "key": "eps_actual",
+      "offset": -10
+     },
+     {
+      "row": 53,
+      "key": "eps_surprise_pct",
+      "offset": -10
+     },
+     {
+      "row": 54,
+      "key": "announce_date",
+      "offset": -9
+     },
+     {
+      "row": 55,
+      "key": "period_end",
+      "offset": -9
+     },
+     {
+      "row": 56,
+      "key": "fq_label",
+      "offset": -9
+     },
+     {
+      "row": 57,
+      "key": "rev_est",
+      "offset": -9
+     },
+     {
+      "row": 58,
+      "key": "rev_actual",
+      "offset": -9
+     },
+     {
+      "row": 59,
+      "key": "rev_surprise_pct",
+      "offset": -9
+     },
+     {
+      "row": 60,
+      "key": "ebitda_est",
+      "offset": -9
+     },
+     {
+      "row": 61,
+      "key": "ebitda_actual",
+      "offset": -9
+     },
+     {
+      "row": 62,
+      "key": "eps_est",
+      "offset": -9
+     },
+     {
+      "row": 63,
+      "key": "eps_actual",
+      "offset": -9
+     },
+     {
+      "row": 64,
+      "key": "eps_surprise_pct",
+      "offset": -9
+     },
+     {
+      "row": 65,
+      "key": "announce_date",
+      "offset": -8
+     },
+     {
+      "row": 66,
+      "key": "period_end",
+      "offset": -8
+     },
+     {
+      "row": 67,
+      "key": "fq_label",
+      "offset": -8
+     },
+     {
+      "row": 68,
+      "key": "rev_est",
+      "offset": -8
+     },
+     {
+      "row": 69,
+      "key": "rev_actual",
+      "offset": -8
+     },
+     {
+      "row": 70,
+      "key": "rev_surprise_pct",
+      "offset": -8
+     },
+     {
+      "row": 71,
+      "key": "ebitda_est",
+      "offset": -8
+     },
+     {
+      "row": 72,
+      "key": "ebitda_actual",
+      "offset": -8
+     },
+     {
+      "row": 73,
+      "key": "eps_est",
+      "offset": -8
+     },
+     {
+      "row": 74,
+      "key": "eps_actual",
+      "offset": -8
+     },
+     {
+      "row": 75,
+      "key": "eps_surprise_pct",
+      "offset": -8
+     },
+     {
+      "row": 76,
+      "key": "announce_date",
+      "offset": -7
+     },
+     {
+      "row": 77,
+      "key": "period_end",
+      "offset": -7
+     },
+     {
+      "row": 78,
+      "key": "fq_label",
+      "offset": -7
+     },
+     {
+      "row": 79,
+      "key": "rev_est",
+      "offset": -7
+     },
+     {
+      "row": 80,
+      "key": "rev_actual",
+      "offset": -7
+     },
+     {
+      "row": 81,
+      "key": "rev_surprise_pct",
+      "offset": -7
+     },
+     {
+      "row": 82,
+      "key": "ebitda_est",
+      "offset": -7
+     },
+     {
+      "row": 83,
+      "key": "ebitda_actual",
+      "offset": -7
+     },
+     {
+      "row": 84,
+      "key": "eps_est",
+      "offset": -7
+     },
+     {
+      "row": 85,
+      "key": "eps_actual",
+      "offset": -7
+     },
+     {
+      "row": 86,
+      "key": "eps_surprise_pct",
+      "offset": -7
+     },
+     {
+      "row": 87,
+      "key": "announce_date",
+      "offset": -6
+     },
+     {
+      "row": 88,
+      "key": "period_end",
+      "offset": -6
+     },
+     {
+      "row": 89,
+      "key": "fq_label",
+      "offset": -6
+     },
+     {
+      "row": 90,
+      "key": "rev_est",
+      "offset": -6
+     },
+     {
+      "row": 91,
+      "key": "rev_actual",
+      "offset": -6
+     },
+     {
+      "row": 92,
+      "key": "rev_surprise_pct",
+      "offset": -6
+     },
+     {
+      "row": 93,
+      "key": "ebitda_est",
+      "offset": -6
+     },
+     {
+      "row": 94,
+      "key": "ebitda_actual",
+      "offset": -6
+     },
+     {
+      "row": 95,
+      "key": "eps_est",
+      "offset": -6
+     },
+     {
+      "row": 96,
+      "key": "eps_actual",
+      "offset": -6
+     },
+     {
+      "row": 97,
+      "key": "eps_surprise_pct",
+      "offset": -6
+     },
+     {
+      "row": 98,
+      "key": "announce_date",
+      "offset": -5
+     },
+     {
+      "row": 99,
+      "key": "period_end",
+      "offset": -5
+     },
+     {
+      "row": 100,
+      "key": "fq_label",
+      "offset": -5
+     },
+     {
+      "row": 101,
+      "key": "rev_est",
+      "offset": -5
+     },
+     {
+      "row": 102,
+      "key": "rev_actual",
+      "offset": -5
+     },
+     {
+      "row": 103,
+      "key": "rev_surprise_pct",
+      "offset": -5
+     },
+     {
+      "row": 104,
+      "key": "ebitda_est",
+      "offset": -5
+     },
+     {
+      "row": 105,
+      "key": "ebitda_actual",
+      "offset": -5
+     },
+     {
+      "row": 106,
+      "key": "eps_est",
+      "offset": -5
+     },
+     {
+      "row": 107,
+      "key": "eps_actual",
+      "offset": -5
+     },
+     {
+      "row": 108,
+      "key": "eps_surprise_pct",
+      "offset": -5
+     },
+     {
+      "row": 109,
+      "key": "announce_date",
+      "offset": -4
+     },
+     {
+      "row": 110,
+      "key": "period_end",
+      "offset": -4
+     },
+     {
+      "row": 111,
+      "key": "fq_label",
+      "offset": -4
+     },
+     {
+      "row": 112,
+      "key": "rev_est",
+      "offset": -4
+     },
+     {
+      "row": 113,
+      "key": "rev_actual",
+      "offset": -4
+     },
+     {
+      "row": 114,
+      "key": "rev_surprise_pct",
+      "offset": -4
+     },
+     {
+      "row": 115,
+      "key": "ebitda_est",
+      "offset": -4
+     },
+     {
+      "row": 116,
+      "key": "ebitda_actual",
+      "offset": -4
+     },
+     {
+      "row": 117,
+      "key": "eps_est",
+      "offset": -4
+     },
+     {
+      "row": 118,
+      "key": "eps_actual",
+      "offset": -4
+     },
+     {
+      "row": 119,
+      "key": "eps_surprise_pct",
+      "offset": -4
+     },
+     {
+      "row": 120,
+      "key": "announce_date",
+      "offset": -3
+     },
+     {
+      "row": 121,
+      "key": "period_end",
+      "offset": -3
+     },
+     {
+      "row": 122,
+      "key": "fq_label",
+      "offset": -3
+     },
+     {
+      "row": 123,
+      "key": "rev_est",
+      "offset": -3
+     },
+     {
+      "row": 124,
+      "key": "rev_actual",
+      "offset": -3
+     },
+     {
+      "row": 125,
+      "key": "rev_surprise_pct",
+      "offset": -3
+     },
+     {
+      "row": 126,
+      "key": "ebitda_est",
+      "offset": -3
+     },
+     {
+      "row": 127,
+      "key": "ebitda_actual",
+      "offset": -3
+     },
+     {
+      "row": 128,
+      "key": "eps_est",
+      "offset": -3
+     },
+     {
+      "row": 129,
+      "key": "eps_actual",
+      "offset": -3
+     },
+     {
+      "row": 130,
+      "key": "eps_surprise_pct",
+      "offset": -3
+     },
+     {
+      "row": 131,
+      "key": "announce_date",
+      "offset": -2
+     },
+     {
+      "row": 132,
+      "key": "period_end",
+      "offset": -2
+     },
+     {
+      "row": 133,
+      "key": "fq_label",
+      "offset": -2
+     },
+     {
+      "row": 134,
+      "key": "rev_est",
+      "offset": -2
+     },
+     {
+      "row": 135,
+      "key": "rev_actual",
+      "offset": -2
+     },
+     {
+      "row": 136,
+      "key": "rev_surprise_pct",
+      "offset": -2
+     },
+     {
+      "row": 137,
+      "key": "ebitda_est",
+      "offset": -2
+     },
+     {
+      "row": 138,
+      "key": "ebitda_actual",
+      "offset": -2
+     },
+     {
+      "row": 139,
+      "key": "eps_est",
+      "offset": -2
+     },
+     {
+      "row": 140,
+      "key": "eps_actual",
+      "offset": -2
+     },
+     {
+      "row": 141,
+      "key": "eps_surprise_pct",
+      "offset": -2
+     },
+     {
+      "row": 142,
+      "key": "announce_date",
+      "offset": -1
+     },
+     {
+      "row": 143,
+      "key": "period_end",
+      "offset": -1
+     },
+     {
+      "row": 144,
+      "key": "fq_label",
+      "offset": -1
+     },
+     {
+      "row": 145,
+      "key": "rev_est",
+      "offset": -1
+     },
+     {
+      "row": 146,
+      "key": "rev_actual",
+      "offset": -1
+     },
+     {
+      "row": 147,
+      "key": "rev_surprise_pct",
+      "offset": -1
+     },
+     {
+      "row": 148,
+      "key": "ebitda_est",
+      "offset": -1
+     },
+     {
+      "row": 149,
+      "key": "ebitda_actual",
+      "offset": -1
+     },
+     {
+      "row": 150,
+      "key": "eps_est",
+      "offset": -1
+     },
+     {
+      "row": 151,
+      "key": "eps_actual",
+      "offset": -1
+     },
+     {
+      "row": 152,
+      "key": "eps_surprise_pct",
+      "offset": -1
+     },
+     {
+      "row": 153,
+      "key": "announce_date",
+      "offset": 0
+     },
+     {
+      "row": 154,
+      "key": "period_end",
+      "offset": 0
+     },
+     {
+      "row": 155,
+      "key": "fq_label",
+      "offset": 0
+     },
+     {
+      "row": 156,
+      "key": "rev_est",
+      "offset": 0
+     },
+     {
+      "row": 157,
+      "key": "rev_actual",
+      "offset": 0
+     },
+     {
+      "row": 158,
+      "key": "rev_surprise_pct",
+      "offset": 0
+     },
+     {
+      "row": 159,
+      "key": "ebitda_est",
+      "offset": 0
+     },
+     {
+      "row": 160,
+      "key": "ebitda_actual",
+      "offset": 0
+     },
+     {
+      "row": 161,
+      "key": "eps_est",
+      "offset": 0
+     },
+     {
+      "row": 162,
+      "key": "eps_actual",
+      "offset": 0
+     },
+     {
+      "row": 163,
+      "key": "eps_surprise_pct",
+      "offset": 0
+     }
+    ]
+   }
+  }
+ }
+}
